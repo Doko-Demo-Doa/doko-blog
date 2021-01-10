@@ -23,7 +23,8 @@ module.exports = {
       {
         sizes: [200]
       }
-    ]
+    ],
+    'docusaurus-plugin-sass',
   ],
   themeConfig: {
     navbar: {
