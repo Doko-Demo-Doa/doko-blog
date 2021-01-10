@@ -49,4 +49,5 @@ Các thông tin khác về Conda và Tensorflow các bạn có thể đọc thê
 Tùy đời card đồ họa mà ta sẽ có phiên bản tương thích tương ứng. Ví dụ với GTX 1080Ti thì combo sau sẽ là chuẩn nhất:
 
 **CUDA Toolkit 10.0**: [Link](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal) (Có thể sẽ phải click 2 lần).
+
 **Download cuDNN v7.5.0 (Feb 21, 2019), for CUDA 10.0**: [Link](https://developer.nvidia.com/rdp/cudnn-archive)
