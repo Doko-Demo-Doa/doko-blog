@@ -25,16 +25,9 @@ module.exports = {
         src: 'img/pc_header_lower_doraemon.png',
       },
       items: [
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'},
         // Please keep GitHub link to the right for consistency.
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Doko-Demo-Doa/aniviet-hub',
           label: 'GitHub',
           position: 'right',
         },
@@ -44,59 +37,57 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Learn',
+          title: 'Bài đăng theo ngôn ngữ',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: 'Tiếng Việt',
+              to: '/tags/vietnamese',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2',
+              label: 'English',
+              to: '/tags/english',
+            },
+            {
+              label: '日本語',
+              to: '/tags/japanese',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Liên hệ',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Email',
+              href: 'mailto:doraemonfanclub@gmail.com',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Steam',
+              href: 'https://steamcommunity.com/id/doko/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Github',
+              href: 'https://github.com/Doko-Demo-Doa',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Chủ đề',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: 'Lập trình',
+              href: '/tags/programming/',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'Legal',
-          // Please do not remove the privacy and terms, it's a legal requirement.
-          items: [
-            {
-              label: 'Privacy',
-              href: 'https://opensource.facebook.com/legal/privacy/',
+              label: 'Fansubs',
+              href: '/tags/fansubs/',
             },
             {
-              label: 'Terms',
-              href: 'https://opensource.facebook.com/legal/terms/',
+              label: 'Doraemon',
+              href: '/tags/doraemon/',
+            },
+            {
+              label: 'Khác',
+              href: '/tags/other/',
             },
           ],
         },
