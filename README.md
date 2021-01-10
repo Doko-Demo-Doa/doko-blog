@@ -1,6 +1,7 @@
-# Website
+# aniviet-hub
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This is my new personal blog. I'm migrating away from Wordpress since it's too slow and inefficient.
+This website is built using [Docusaurus 2](https://v2.docusaurus.io/), and is deployed automatically with [DigitalOcean's App Platform](https://cloud.digitalocean.com/apps/).
 
 ### Installation
 
