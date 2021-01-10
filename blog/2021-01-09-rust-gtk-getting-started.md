@@ -9,9 +9,11 @@ hide_table_of_contents: false,
 tags: [vietnamese, fansubs, doraemon, doraeiga]
 ---
 
-Okay, if you are reading this, you may (probably) have been searching for something like "rust gtk getting started" on Google. Most of them points to another awesome guides such as [here](https://nora.codes/tutorial/speedy-desktop-apps-with-gtk-and-rust/)
+Okay, if you are reading this, you may (probably) have been searching for something like "rust gtk getting started" on Google. Most of them points to another awesome guides such as [here](https://nora.codes/tutorial/speedy-desktop-apps-with-gtk-and-rust/).
 
 Rust is an interesting language and I decided to get along with it (after years of working with JavaScript, Java and Dart). I decided to give it a try with desktop UI development, but bumped into toolchain obstacles.
+
+<!--truncate-->
 
 Why GTK, you ask? At the time of writing:
 
