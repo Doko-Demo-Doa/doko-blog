@@ -6,7 +6,7 @@ author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
 author_image_url: https://i.imgur.com/UhtGS.png
 hide_table_of_contents: false,
-tags: [vietnamese, fansubs, doraemon, doraeiga]
+tags: [english, programming, rust, gtk]
 ---
 
 ![rust-gtk](https://i.ibb.co/1QrgS8q/rust-gtk.jpg)
