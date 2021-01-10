@@ -12,7 +12,7 @@ module.exports = {
   tagline: 'The tagline of my site',
   url: 'https://hub.aniviet.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Clip-sub', // Usually your GitHub org/user name.
@@ -75,19 +75,19 @@ module.exports = {
           items: [
             {
               label: 'Lập trình',
-              href: '/tags/programming/',
+              href: '/tags/programming',
             },
             {
               label: 'Fansubs',
-              href: '/tags/fansubs/',
+              href: '/tags/fansubs',
             },
             {
               label: 'Doraemon',
-              href: '/tags/doraemon/',
+              href: '/tags/doraemon',
             },
             {
               label: 'Khác',
-              href: '/tags/other/',
+              href: '/tags/other',
             },
           ],
         },
