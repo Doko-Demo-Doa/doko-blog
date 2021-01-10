@@ -17,6 +17,14 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'Clip-sub', // Usually your GitHub org/user name.
   projectName: 'aniviet-hub', // Usually your repo name.
+  plugins: [
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        sizes: [200]
+      }
+    ]
+  ],
   themeConfig: {
     navbar: {
       title: "Doko's hub",
