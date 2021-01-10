@@ -1,0 +1,52 @@
+{
+  "name": "aniviet-hub",
+  "version": "2.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear",
+    "ci": "yarn lint && yarn prettier:diff",
+    "lint": "eslint --cache \"**/*.js\" && stylelint \"**/*.css\"",
+    "prettier": "prettier --config .prettierrc --write \"**/*.{js,md}\"",
+    "prettier:diff": "prettier --config .prettierrc --list-different \"**/*.{js,md}\""
+  },
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-alpha.70",
+    "@docusaurus/preset-classic": "2.0.0-alpha.70",
+    "@mdx-js/react": "1.6.22",
+    "clsx": "1.1.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "7.17.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "7.1.0",
+    "eslint-plugin-header": "3.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "prettier": "2.2.1",
+    "stylelint": "13.8.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
