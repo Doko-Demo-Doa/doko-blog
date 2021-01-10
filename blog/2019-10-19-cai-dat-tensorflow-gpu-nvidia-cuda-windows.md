@@ -9,6 +9,11 @@ hide_table_of_contents: false
 tags: [vietnamese, programming, nvidia, cuda, tensorflow]
 ---
 
+![cudnn](https://i.ibb.co/0sGSRhY/cudnn-logo.png)
+
+Hướng dẫn cài đặt nhanh miniconda và các phiên bản phù hợp nhất để làm việc với CUDA trên Windows.
+
+<!--truncate-->
 
 PIP là công cụ quản lý gói (package manager) cho Python, và thường thì để cài đặt Tensorflow chúng ta thường sử dụng ngay lệnh:
 
