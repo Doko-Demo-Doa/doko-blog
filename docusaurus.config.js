@@ -8,21 +8,21 @@
  */
 
 module.exports = {
-  title: 'My Site',
+  title: "Doko's blog",
   tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://hub.aniviet.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Clip-sub', // Usually your GitHub org/user name.
+  projectName: 'aniviet-hub', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Facebook Project',
+      title: "Doko's hub",
       logo: {
-        alt: 'My Facebook Project Logo',
-        src: 'img/logo.svg',
+        alt: 'Chime logo',
+        src: 'img/pc_header_lower_doraemon.png',
       },
       items: [
         {
@@ -101,28 +101,21 @@ module.exports = {
           ],
         },
       ],
-      logo: {
-        alt: 'Facebook Open Source Logo',
-        src: 'img/oss_logo.png',
-        href: 'https://opensource.facebook.com',
-      },
       // Please do not remove the credits, help to publicize Docusaurus :)
-      copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Quan Pham. All rights reserved. Built with Docusaurus 2.`,
     },
   },
   presets: [
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
+        docs: false,
         blog: {
+          path: './blog',
+          routeBasePath: '/',
+          blogTitle: "Doko's hub",
+          blogDescription: 'My new blog with better access and readability.',
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
