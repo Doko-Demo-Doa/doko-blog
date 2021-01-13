@@ -4,9 +4,9 @@ author: Doko
 author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
 author_image_url: /img/avatar_doraemon.jpg
-image: https://i.ibb.co/zNZsCjV/electron-web-combo.jpg
+image: https://i.ibb.co/48cpLdp/react-electron.png
 hide_table_of_contents: false
-tags: [vietnamese, programming, reactjs, electron]
+tags: [vietnamese, programming, reactjs, javascript, typescript, cra, electron]
 ---
 
 :::info
