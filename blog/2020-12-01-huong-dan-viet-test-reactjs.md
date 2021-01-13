@@ -6,6 +6,7 @@ author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
 author_image_url: /img/avatar_doraemon.jpg
 hide_table_of_contents: false
+image: https://i.ibb.co/qR1jHkW/react-testing-library.png
 tags: [vietnamese, programming, reactjs]
 ---
 
