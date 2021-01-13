@@ -4,7 +4,7 @@ title: Cài đặt Tensorflow-GPU với Conda và NVIDIA CUDA Toolkit trên Wind
 author: Doko
 author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
-author_image_url: https://i.imgur.com/UhtGS.png
+author_image_url: /img/avatar_doraemon.jpg
 hide_table_of_contents: false
 tags: [vietnamese, programming, nvidia, cuda, tensorflow]
 ---

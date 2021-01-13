@@ -3,7 +3,7 @@ title: Diễn đạt mật khẩu bằng Regular Expression
 author: Doko
 author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
-author_image_url: https://i.imgur.com/UhtGS.png
+author_image_url: /img/avatar_doraemon.jpg
 hide_table_of_contents: true
 tags: [vietnamese, programming, regular-expression]
 ---

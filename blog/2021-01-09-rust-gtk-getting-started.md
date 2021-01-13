@@ -4,7 +4,7 @@ title: Rust + GTK on Windows - Getting Started
 author: Doko
 author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
-author_image_url: https://i.imgur.com/UhtGS.png
+author_image_url: /img/avatar_doraemon.jpg
 hide_table_of_contents: false
 tags: [english, programming, rust, gtk]
 ---
