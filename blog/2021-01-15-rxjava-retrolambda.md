@@ -16,6 +16,8 @@ tags: [vietnamese, programming, java, rxjava]
 
 Java 8+ với rất nhiều tính năng và cú pháp mới được giới thiệu, trong đó có Lambda Expression được sử dụng để viết anonymous class ngắn gọn hơn. Hiện nay Android Studio 3 đã hỗ trợ cú pháp Java 8 gần như hoàn chỉnh (đã hoàn chỉnh ở API 24) nhưng vì lý do nào đó mà các bạn không thể sử dụng Android Studio 3 thì [Retrolambda](https://github.com/orfjackal/retrolambda) chính là giải pháp.
 
+<!--truncate-->
+
 Trong RxJava, chúng ta sẽ sử dụng rất nhiều anonymous class và interface như <code>Func</code> và <code>Action</code>
 
 Các bạn có thể xem trang github của project Retrolambda:
