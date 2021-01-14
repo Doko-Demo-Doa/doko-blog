@@ -10,7 +10,7 @@ tags: [vietnamese, programming, java, rxjava]
 
 :::info
 
-Đây là bài viết cũ, ở thời điểm hiện tại RxJava 3 đã ra mắt nhưng concept và các khái niệm cơ bản vẫn còn dùng được.
+Đây là bài viết cũ, ở thời điểm hiện tại RxJava 3 đã ra mắt nhưng concept và các khái niệm cơ bản vẫn còn dùng được. Series gốc có thể tìm thấy tại [đây](https://github.com/mgp/effective-rxjava).
 
 :::
 
