@@ -5,7 +5,7 @@ author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
 author_image_url: /img/avatar_doraemon.jpg
 hide_table_of_contents: true
-tags: [vietnamese, tips, mac, big-sur]
+tags: [english, tips, mac, big-sur]
 ---
 
 There are several ways to disable MDM on Mac OS. If you don't know what they are, you can do a quick search on Google.
