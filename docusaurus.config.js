@@ -36,8 +36,8 @@ module.exports = {
       items: [
         // Please keep GitHub link to the right for consistency.
         {
-          href: 'https://github.com/Doko-Demo-Doa/aniviet-hub',
-          label: 'GitHub',
+          href: '/portfolio',
+          label: 'Portfolio',
           position: 'right',
         },
       ],
