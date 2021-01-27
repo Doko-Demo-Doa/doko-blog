@@ -111,143 +111,109 @@ Xem phần "Phụ lục B" để biết thêm chi tiết.
 
 ### [Graphics]
 
-- This sections contains text-encoded graphic files, if the user opted to embed any pictures they used in the script. The binary picture files are text-encoded, which is inefficient, but ensures that SSA scripts can still be handled by any text editor, if required.
+- Phần này chứa các file đồ họa đã được mã hóa văn bản, nếu như trước đó người dùng muốn sử dụng hình ảnh trong script. File ảnh được mã hóa text, dù không hiệu quả lắm nhưng đảm bảo cho việc các script SSA vẫn có thể được đọc bởi bất kì công cụ văn bản nào.
 
-Each graphic file is started with a single line in the format:<br>
-<b>filename: <name of file></b><br>
-<br>
-The word <b>“filename”</b> must be in lower case (upper case will be interpreted as part of a text-encoded file). <br>
-<br>
-<b><name of file></b> is the file name that SSA will use when saving the picture file. It will match the filename of a picture used in the script.<br>
-<br>
-SSA saves any files found in the script in a subdirectory off SSA's program directory, "Pictures"
-eg. c:\program files\Sub Station Alpha v4.00\Pictures. SSA will attempt to load files using the paths specified in the script, but if they are not found, it will look in the "Pictures" subdirectory for them.<br>
-<br>
-The fontname line is followed by lines of printable characters, fontrepresenting the binary values which make up the picture font file - format is as per embedded font files.<br>
-<h2><a name="3" href="#top">3. The line types in a Sub Station Alpha script</a></h2>
-This briefly describes each of the line types that can appear in a Sub Station Alpha Script. Full details of the information held in each line type is in the next chapter.<br>
-<table>
-<tr><td><b>!:</b></td><td>Phần này không hiển thị khi xem, chỉ là một dạng metadata.</td></tr>
-<tr><td><b>Title:</b></td><td>Mô tả script</td></tr>
-<tr><td><b>Original Script:</b></td><td>Tác giả script</td></tr>
-<tr><td><b>Original Translation:</b></td><td>(tùy chọn) Người dịch</td></tr>
-<tr><td><b>Original Editing:</b></td><td>(tùy chọn) người chỉnh sửa.</td></tr>
-<tr><td><b>Original Timing:</b></td><td>(tùy chọn) Whoever timed the original script</td></tr>
-<tr><td><b>Synch Point:	</b></td><td>(tùy chọn) Description of where in the video the script should begin playback.</td></tr>
-<tr><td><b>Script Updated By:</b></td><td>(tùy chọn) Names of any other subtitling groups who edited the original script.</td></tr>
-<tr><td><b>Update Details:</b></td><td>The details of any updates to the original script made by other subtilting groups.</td></tr>
-<tr><td><b>ScriptType:</b></td><td>Phiên bản script, ví dụ: "V3.00".</td></tr>
-<tr><td><b>Collisions:</b></td><td>Cho biết phụ đề sẽ được di chuyển như thế nào.</td></tr>
-<tr><td><b>PlayResY:</b></td><td>This is the height of the screen used by the authors when playing the script.</td></tr>
-<tr><td><b>PlayResX:</b></td><td>This is the width of the screen used by the authors when playing the script.</td></tr>
-<tr><td><b>PlayResX:</b></td><td>This is the colour depth used by the authors when playing the script.</td></tr>
-<tr><td><b>Timer:</b></td><td>Tốc độ hiển thị của script, dưới dạng phần trăm.<br>
-ví dụ. "100.0000" là đúng 100%.<br>
-Timer được sử dụng dưới dạng số nhân.</td></tr>
-<tr><td><b>Style:</b></td><td>Định nghĩa style, sử dụng để định dạng kiểu hiển thị trong file sub.</td></tr>
-<tr><td><b>Dialogue:</b></td><td>This is a Dialogue event, ie. Some text to display.</td></tr>
-<tr><td><b>Comment:</b></td><td>This is a "comment" event.<br>
-This contains the same information as a Dialogue, Picture, Sound, Movie, or Command event, but it is ignored during script playback.</td></tr>
-<tr><td><b>Picture:</b></td><td>This is a "picture" event, which means SSA will display the specified .bmp, .jpg, .gif, .ico or .wmf graphic.</td></tr>
-<tr><td><b>Sound:</b></td><td>This is a "sound" event, which means SSA will play the specified .wav file.</td></tr>
-<tr><td><b>Movie:</b></td><td>This is a "movie" event, which means SSA will play the specified .avi file.</td></tr>
-<tr><td><b>Command:</b></td><td>This is a "command" event, which means SSA will execute the specified program as a background task.</td></tr>
-</table>
-<h2><a name="4" href="#top">4. Header lines, [Script Info] section</a></h2>
-<table>
-<tr><td><b>;</b></td><td>Semicolon. Any text can follow the semicolon<br>
-This is a comment used in the script file only. It is not visible when you load the script into SSA. The semicolon <b>must</b> be the first character in the line. This replaces the <b>!:</b> line type used in previous script versions.</td></tr>
-<tr><td><b>Title:</b></td><td>This is a description of the script. If the original author(s) did not provide this information then <untitled> is automatically substituted.</td></tr>
-<tr><td><b>Original Script:</b></td><td>The original author(s) of the script. If the original author(s) did not provide this information then <unknown> is automatically substituted.</td></tr>
-<tr><td><b>Original Translation:</b></td><td>(optional) The original translator of the dialogue. This entry does not appear if no information was entered by the author.</td></tr>
-<tr><td><b>Original Editing:</b></td><td>(optional) The original script editor(s), typically whoever took the raw translation and turned it into idiomatic english and reworded for readability. This entry does not appear if no information was entered by the author.</td></tr>
-<tr><td><b>Original Timing:</b></td><td>(optional) Whoever timed the original script. This entry does not appear if no information was entered by the author.</td></tr>
-<tr><td><b>Synch Point:</b></td><td>(optional) Description of where in the video the script should begin playback. This entry does not appear if no information was entered by the author.</td></tr>
-<tr><td><b>Script Updated By:</b></td><td>(optional) Names of any other subtitling groups who edited the original script. This entry does not appear if subsequent editors did not enter the information.</td></tr>
-<tr><td><b>Update Details:</b></td><td>The details of any updates to the original script - made by other subtitling groups. This entry does not appear if subsequent editors did not enter any information.</td></tr>
-<tr><td><b>Script Type:</b></td><td>This is the SSA script format version eg. "V4.00". It is used by SSA to give a warning if you are using a version of SSA older than the version that created the script.<br>
-<br>
-<span class="mark">ASS version is “V4.00+”.</span><br>
-</td></tr>
-<tr><td><b>Collisions:</b></td><td>This determines how subtitles are moved, when automatically preventing onscreen collisions.<br>
-<br>
-If the entry says <b>"Normal"</b> then SSA will attempt to position subtitles in the position specified by the "margins". However, subtitles can be shifted vertically to prevent onscreen collisions. With "normal" collision prevention, the subtitles will "stack up" one above the other - but they will always be positioned as close the vertical (bottom) margin as possible - filling in "gaps" in other subtitles if one large enough is available.<br>
-<br>
-If the entry says <b>"Reverse"</b> then subtitles will be shifted upwards to make room for subsequent overlapping subtitles. This means the subtitles can nearly always be read top-down - but it also means that the first subtitle can appear half way up the screen before the subsequent overlapping subtitles appear. It can use a lot of screen area.
-</td></tr>
-<tr><td><b>PlayResY:</b></td><td>This is the height of the screen used by the script's author(s) when playing the script. SSA v4 will automatically select the nearest enabled setting, if you are using Directdraw playback.</td></tr>
-<tr><td><b>PlayResX:</b></td><td>This is the width of the screen used by the script's author(s) when playing the script. SSA will automatically select the nearest enabled, setting if you are using Directdraw playback.</td></tr>
-<tr><td><b>PlayDepth:</b></td><td>This is the colour depth used by the script's author(s) when playing the script. SSA will automatically select the nearest enabled setting if you are using Directdraw playback.</td></tr>
-<tr><td><b>Timer:</b></td><td>This is the Timer Speed for the script, as a percentage.<br>
-<br>
-eg. "100.0000" is exactly 100%. It has four digits following the decimal point.<br>
-<br>
-The timer speed is a time multiplier applied to SSA's clock to stretch or compress the duration of a script. A speed greater than 100% will reduce the overall duration, and means that subtitles will progressively appear sooner and sooner. A speed less than 100% will increase the overall duration of the script means subtitles will progressively appear later and later (like a positive ramp time).<br>
-<br>
-The stretching or compressing only occurs during script playback - this value does not change the actual timings for each event listed in the script.<br>
-<br>
-Check the SSA user guide if you want to know why "Timer Speed" is more powerful than "Ramp Time", even though they both achieve the same result.
-</td></tr>
-<tr><td><span class="mark">WrapStyle:</b></span></td><td><span class="mark">Defines the default wrapping style.<br>
-0: smart wrapping, lines are evenly broken<br>
-1: end-of-line word wrapping, only \N breaks<br>
-2: no word wrapping, \n \N both breaks<br>
-3: same as 0, but lower line gets wider.
-</span></td></tr>
-</table>
-<h2><a name="5" href="#top">5. Style Lines, [v4+ Styles] section</a></h2>
-Styles define the appearance and position of subtitles. All styles used by the script are are defined by a Style line in the script.<br>
-<br>
-Any of the the settings in the Style, (except shadow/outline type and depth) can overridden by control codes in the subtitle text.<br>
-<br>
+- Mỗi file đồ họa được bắt đầu bởi một dòng đơn, có khuôn dạng:
+
+```bash
+filename: <name of file>
+```
+
+`filename` phải ở dạng viết thường, nếu viết hoa sẽ được xem như một phần text thông thường.
+
+`<name of file>` là tên file mà SSA sẽ lưu lại khi lưu file ảnh, sẽ có cùng tên với ảnh được sử dụng trong script.
+
+SSA lưu bất kì file nào tìm thấy trong script trong một thư mục có tên "Pictures" cùng folder với file script. Nếu có đường dẫn được chỉ định rõ ràng thì sẽ tìm trong đó trước khi tìm trong "Pictures".
+
+Ngay phía sau `fontname` là tên font dùng để embed vào script.
+
+
+## 3. The line types in a Sub Station Alpha script
+
+Phần sau đây mô tả các loại dòng có thể xuất hiện trong một file ASS. Chi tiết sẽ được đề cập ở phần sau.
+
+| Tên thẻ | Ý nghĩa |
+|-|-|
+| !: | Phần này không hiển thị khi xem, chỉ là một dạng metadata. |
+| Title | Tiêu đề script. |
+| Original Script | Script gốc. |
+| Original Translation | Bản dịch gốc. |
+| Original Editing | Bản chỉnh sửa gốc. |
+| Original Timing | Bản căn thời gian gốc. |
+| Sync Point | Mô tả điểm bắt đầu play trong video. |
+| Script Updated By | Tên người cập nhật script. |
+| Update Details | Nội dung cập nhật script. |
+| ScriptType | Phiên bản script, ví dụ: ". |
+| Collisions | Cho biết phụ đề sẽ được di chuyển như thế nào. |
+| PlayResY | Chiều cao của màn hình sử dụng bởi tác giả khi chạy script |
+| PlayResX | Chiều ngang của màn hình sử dụng bởi tác giả khi chạy script |
+| PlayDepth | Độ sâu màu (Color Depth) được sử dụng khi chạy script |
+| Timer | Tốc độ hiển thị của script, dưới dạng phần trăm. Ví dụ. "100.0000" là đúng 100%. Timer được sử dụng dưới dạng số nhân. |
+| Style | Định nghĩa style, sử dụng để định dạng kiểu hiển thị trong file sub. |
+| Dialogue | Câu thoại. Text sẽ hiển thị ở đây. |
+| Comment | Comment. Có nội dung giống Dialogue / Style, nhưng khi play sẽ được bỏ qua. |
+| WrapStyle | Định nghĩa cách xuống dòng. <br>0: xuống dòng "thông minh", các dòng sẽ được chia đều <br>1: chỉ xuống dòng khi hết câu, cắt dòng bởi `\N` <br>2: không xuống dòng, `\n` `\N` đều cắt dòng <br>3: giống 0, nhưng dòng dưới sẽ rộng hơn. |
+
+
+## 5. Dòng Style, `[v4+ Styles]`
+
+"Style" chỉ định cách hiển thị và vị trí của phụ đề. Tất cả các style được dùng bởi script đều được định nghĩa bởi một dòng Style trong script.
+
+Tất cả các tùy chỉnh trong Style (trừ Shadow, Outline và Depth) đều có thể được ghi đè bằng các thẻ viết trong phần text của phụ đề.
+
 The fields which appear in each Style definition line are named in a special line with the line type “Format:”. The Format line must appear before any Styles - because it defines how SSA will interpret the Style definition lines. The field names listed in the format line must be correctly spelled! The fields are as follows:<br>
-<br>
-<b>Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, TertiaryColour, BackColour, Bold, Italic, <span class="mark">Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle</span>, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, AlphaLevel, Encoding</b><br>
-<br>
-The format line allows new fields to be added to the script format in future, and yet allow old versions of the software to read the fields it recognises - even if the field order is changed.<br>
-<table>
-<tr><td>Field 1:</td><td><b>Name.</b> The name of the Style. Case sensitive. Cannot include commas.</td></tr>
-<tr><td>Field 2:</td><td><b>Fontname.</b> The fontname as used by Windows. Case-sensitive.</td></tr>
-<tr><td>Field 3:</td><td><b>Fontsize.</b></td></tr>
-<tr><td>Field 4:</td><td><b>PrimaryColour.</b> A long integer BGR (blue-green-red)  value. ie. the byte order in the hexadecimal equivelent of this number is BBGGRR<br>
-<br>
-This is the colour that a subtitle will normally appear in.</td></tr>
-<tr><td>Field 5:</td><td><b>SecondaryColour.</b> A long integer BGR (blue-green-red)  value. ie. the byte order in the hexadecimal equivelent of this number is BBGGRR<br>
-<br>
-This colour may be used instead of the Primary colour when a subtitle is automatically shifted to prevent an onscreen collsion, to distinguish the different subtitles.</td></tr>
-<tr><td>Field 6:</td><td><span class="mark">OutlineColour</span> <b><s>(TertiaryColour)</s></b> A long integer BGR (blue-green-red)  value. ie. the byte order in the hexadecimal equivelent of this number is BBGGRR<br>
-<br>
-This colour may be used instead of the Primary or Secondary colour when a subtitle is automatically shifted to prevent an onscreen collsion, to distinguish the different subtitles.</td></tr>
-<tr><td>Field 7:</td><td><b>BackColour.</b> This is the colour of the subtitle outline or shadow, if these are used. A long integer BGR (blue-green-red)  value. ie. the byte order in the hexadecimal equivelent of this number is BBGGRR.</td></tr>
-<tr><td><span class="mark">Field 4-7:</span></td><td><span class="mark">The color format contains the alpha channel, too. (AABBGGRR)</span></td></tr>
-<tr><td>Field 8:</td><td><b>Bold.</b> This defines whether text is bold (true) or not (false). -1 is True, 0 is False. This is independant of the Italic attribute - you can have have text which is both bold and italic.</td></tr>
-<tr><td>Field 9:</td><td><b>Italic.</b> This defines whether text is italic (true) or not (false). -1 is True, 0 is False. This is independant of the bold attribute - you can have have text which is both bold and italic.</td></tr>
-<tr><td><span class="mark">Field 9.1:</span></td><td><span class="mark">Underline. [-1 or 0]</span></td></tr>
-<tr><td><span class="mark">Field 9.2:</span></td><td><span class="mark">Strikeout. [-1 or 0]</span></td></tr>
-<tr><td><span class="mark">Field 9.3:</span></td><td><span class="mark">ScaleX. Modifies the width of the font. [percent]</span></td></tr>
-<tr><td><span class="mark">Field 9.4:</span></td><td><span class="mark">ScaleY. Modifies the height of the font. [percent]</span></td></tr>
-<tr><td><span class="mark">Field 9.5:</span></td><td><span class="mark">Spacing. Extra space between characters. [pixels]</span></td></tr>
-<tr><td><span class="mark">Field 9.6:</span></td><td><span class="mark">Angle.  The origin of the rotation is defined by the alignment. Can be a floating point number. [degrees]</span></td></tr>
-<tr><td>Field 10:</td><td><b>BorderStyle.</b> 1=Outline + drop shadow, 3=Opaque box</td></tr>
-<tr><td>Field 11:</td><td><b>Outline.</b> If BorderStyle is 1,  then this specifies the width of the outline around the text, in pixels.
-Values may be 0, 1, 2, 3 or 4.</td></tr>
-<tr><td>Field 12:</td><td><b>Shadow.</b> If BorderStyle is 1,  then this specifies the depth of the drop shadow behind the text, in pixels. Values may be 0, 1, 2, 3 or 4. Drop shadow is always used in addition to an outline - SSA will force an outline of 1 pixel if no outline width is given.</td></tr>
-<tr><td>Field 13:</td><td><b>Alignment.</b> This sets how text is "justified" within the Left/Right onscreen margins, and also the vertical placing. Values may be 1=Left, 2=Centered, 3=Right. Add 4 to the value for a "Toptitle". Add 8 to the value for a "Midtitle".<br>
-eg. 5 = left-justified toptitle</td></tr>
-<tr><td><span class="mark">Field 13:</span></td><td><span class="mark">Alignment, but after the layout of the numpad (1-3 sub, 4-6 mid, 7-9 top).</span></td></tr>
-<tr><td>Field 14:</td><td><b>MarginL.</b> This defines the Left Margin in pixels. It is the distance from the left-hand edge of the screen.The three onscreen margins (MarginL, MarginR, MarginV) define areas in which the subtitle text will be displayed.</td></tr>
-<tr><td>Field 15:</td><td><b>MarginR.</b> This defines the Right Margin in pixels. It is the distance from the right-hand edge of the screen. The three onscreen margins (MarginL, MarginR, MarginV) define areas in which the subtitle text will be displayed.</td></tr>
-<tr><td>Field 16:</td><td><b>MarginV.</b> This defines the vertical Left Margin in pixels.<br>
-For a <b>subtitle</b>, it is the distance from the <b>bottom</b> of the screen.<br>
-For a <b>toptitle</b>, it is the distance from the <b>top</b> of the screen.<br>
-For a <b>midtitle</b>, the value is ignored - the text will be vertically centred
-<br></td></tr>
-<tr><td>Field 17:</td><td><b>AlphaLevel.</b> This defines the transparency of the text. SSA does not use this yet.</td></tr>
-<tr><td><span class="mark">Field 17:</span></td><td><span class="mark">Not present in ASS.</span></td></tr>
-<tr><td>Field 18:</td><td><b>Encoding.</b> This specifies the font character set or encoding and on multi-lingual Windows installations it provides access to characters used in multiple than one languages. It is usually 0 (zero) for English (Western, ANSI) Windows.<br>
-<br>
-<span class="mark">When the file is Unicode, this field is useful during file format conversions.</span></td></tr>
-</table>
+
+Các dòng trong phần định nghĩa style được đặt tên theo quy ước của một dòng đặc biệt có tên `Format:`. Dòng `Format` này xuất hiện trước tất cả các Style, vì nó sẽ quyết định cách SSA thông dịch các Style. Các trường trong mục Format đều phải được ghi đúng chính tả, bao gồm:
+
+```
+1. Name
+2. Fontname
+3. Fontsize
+4. PrimaryColour
+5. SecondaryColour
+6. TertiaryColour
+7. BackColour
+8. Bold
+9. Italic
+9.1. Underline
+9.2. StrikeOut
+9.3. ScaleX
+9.4. ScaleY
+9.5. Spacing
+9.6. Angle
+10. BorderStyle
+11. Outline
+12. Shadow
+13. Alignment
+14. MarginL
+15. MarginR
+16. MarginV
+17. AlphaLevel
+18. Encoding
+```
+
+| Tên field | Ý nghĩa |
+|-|-|
+| Field 1 | Tên Style, có phân biệt hoa thường, không bao gồm dấu phẩy. |
+| Field 2 | Tên font được dùng bởi Windows, có phân biệt hoa thường |
+| Field 3 | Kích thước font. |
+| Field 4 | PrimaryColor - màu chủ đạo, tức là màu của phần thịt chữ. |
+| Original Editing | Bản chỉnh sửa gốc. |
+| Original Timing | Bản căn thời gian gốc. |
+| Sync Point | Mô tả điểm bắt đầu play trong video. |
+| Script Updated By | Tên người cập nhật script. |
+| Update Details | Nội dung cập nhật script. |
+| ScriptType | Phiên bản script, ví dụ: ". |
+| Collisions | Cho biết phụ đề sẽ được di chuyển như thế nào. |
+| PlayResY | Chiều cao của màn hình sử dụng bởi tác giả khi chạy script |
+| PlayResX | Chiều ngang của màn hình sử dụng bởi tác giả khi chạy script |
+| PlayDepth | Độ sâu màu (Color Depth) được sử dụng khi chạy script |
+| Timer | Tốc độ hiển thị của script, dưới dạng phần trăm. Ví dụ. "100.0000" là đúng 100%. Timer được sử dụng dưới dạng số nhân. |
+| Style | Định nghĩa style, sử dụng để định dạng kiểu hiển thị trong file sub. |
+| Dialogue | Câu thoại. Text sẽ hiển thị ở đây. |
+| Comment | Comment. Có nội dung giống Dialogue / Style, nhưng khi play sẽ được bỏ qua. |
+| WrapStyle | Định nghĩa cách xuống dòng. <br>0: xuống dòng "thông minh", các dòng sẽ được chia đều <br>1: chỉ xuống dòng khi hết câu, cắt dòng bởi `\N` <br>2: không xuống dòng, `\n` `\N` đều cắt dòng <br>3: giống 0, nhưng dòng dưới sẽ rộng hơn. |
+
 <h2><a name="6" href="#top">6. Dialogue event lines, [Events] section</a></h2>
 These contain the subtitle text, their timings, and how it should be displayed.<br>
 The fields which appear in each Dialogue line are defined by a <b>Format</b>: line, which must appear before any events in the section. The format line specifies how SSA will interpret all following Event lines. The field names must be spelled correctly, and are as follows:<br>
