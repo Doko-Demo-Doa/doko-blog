@@ -32,7 +32,7 @@ module.exports = {
       additionalLanguages: ['dart', 'rust'],
     },
     navbar: {
-      title: "Doko's hub",
+      title: "Doko's lair",
       logo: {
         alt: 'Chime logo',
         src: 'img/pc_header_lower_doraemon.png',
