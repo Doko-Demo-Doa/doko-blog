@@ -36,8 +36,8 @@ module.exports = {
       items: [
         // Please keep GitHub link to the right for consistency.
         {
-          href: 'https://github.com/Doko-Demo-Doa/aniviet-hub',
-          label: 'GitHub',
+          href: '/portfolio',
+          label: 'Portfolio',
           position: 'right',
         },
       ],
@@ -102,7 +102,7 @@ module.exports = {
         },
       ],
       // Please do not remove the credits, help to publicize Docusaurus :)
-      copyright: `Copyright © ${new Date().getFullYear()} Quan Pham. All rights reserved. Built with Docusaurus 2.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Quan Pham. All rights reserved.`,
     },
   },
   presets: [
@@ -117,7 +117,7 @@ module.exports = {
           blogDescription: 'My new blog with better access and readability.',
           showReadingTime: true,
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/Doko-Demo-Doa/aniviet-hub/tree/main/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

@@ -1,0 +1,42 @@
+---
+title: Portfolio
+author: Doko
+author_title: Administrator
+author_url: https://github.com/Doko-Demo-Doa
+author_image_url: /img/avatar_doraemon.jpg
+hide_table_of_contents: true
+---
+
+This website is for just anything of mine that I want to share, mostly about gaming, programming and regex references, as well as some halfway objectives that may never get done.
+
+- __Horoscope__: Scorpio
+- __Blood Type__: O
+- __Favorite Colors__: Green and Black
+- __Hobbies__: Lurking, gaming, writing, drawing-painting
+
+You can find me in several places:
+
+- [Steam](https://steamcommunity.com/id/doko/)
+- [Last.fm](https://www.last.fm/user/Doko_Demo_Doa)
+- [Pixiv](https://www.pixiv.net/member.php?id=3997979)
+- [Medium](https://doko-demo-doa.medium.com/)
+
+I also host my collection of slides, mostly for IT and software development training [here](https://it-slides.aniviet.com/) and the source is located [here](https://github.com/Doko-Demo-Doa/slides)
+
+You can email me at doko (at) senchou-fansub.com, please don’t forget to put a meaningful subject title.
+If you have something to ask me in public, please leave comments below.
+
+## Education
+
+- Bachelor in Computer Science and Software Engineering, Hanoi University of Science and Technology, Hanoi, Vietnam April 2011 – April 2013
+- Engineer in Computer Science and Software Engineering, Hanoi University of Science and Technology, Hanoi, Vietnam April 2013 – September 2015
+
+## Technical Skills
+- __Languages__: Kotlin, C#, C++, Dart, Java, JavaScript, TypeScript, Bash, Rust, Lua, Avisynth, JavaScript, JSON, HTML, XML.
+- __Networking__: GraphQL, REST.
+- __Frameworks__: React, React Native, VueJS, Bazel, Spring, Javalin, Electron, Tauri.
+- __IDEs__: Microsoft Visual Studio, VS Code, Eclipse, Android Studio, Google Web Toolkit, IntelliJ IDEA, WebStorm.
+- __Build & Version Control__: Maven, Gradle, NPM, SVN, Git, Redmine.
+- __Continous Integration__: Strider CD, Travis-CI, Jenkins, Drone, GoCD, Gitlab CI, Github Actions.
+- __Operating System Platforms__: Windows, Mac, Linux (mostly Debian-based distributions).
+- __Generic Software__: Microsoft Office Suite, Adobe After Effects, Adobe Photoshop, Internet Browsers, x264.
