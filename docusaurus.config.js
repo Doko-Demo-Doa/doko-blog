@@ -9,7 +9,7 @@
 
 module.exports = {
   title: "Doko's blog",
-  tagline: 'The tagline of my site',
+  tagline: 'Wall of text',
   url: 'https://hub.aniviet.com',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
