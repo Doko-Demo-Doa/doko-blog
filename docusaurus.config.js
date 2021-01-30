@@ -10,7 +10,7 @@
 module.exports = {
   title: "Doko's blog",
   tagline: 'Wall of text',
-  url: 'https://hub.aniviet.com',
+  url: 'https://doko.aniviet.com',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
