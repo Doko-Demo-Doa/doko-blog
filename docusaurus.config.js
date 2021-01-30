@@ -8,7 +8,7 @@
  */
 
 module.exports = {
-  title: "Doko's blog",
+  title: "Doko's lair",
   tagline: 'Wall of text',
   url: 'https://doko.aniviet.com',
   baseUrl: '/',
@@ -39,7 +39,12 @@ module.exports = {
       },
       items: [
         {
-          href: '/portfolio',
+          href: 'https://akari.aniviet.com/reader/',
+          label: 'Reader',
+          position: 'right',
+        },
+        {
+          to: '/portfolio',
           label: 'Portfolio',
           position: 'right',
         },
