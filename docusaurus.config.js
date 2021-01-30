@@ -27,6 +27,10 @@ module.exports = {
     'docusaurus-plugin-sass',
   ],
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/palenight'),
+      additionalLanguages: ['dart', 'rust'],
+    },
     navbar: {
       title: "Doko's hub",
       logo: {
@@ -34,7 +38,6 @@ module.exports = {
         src: 'img/pc_header_lower_doraemon.png',
       },
       items: [
-        // Please keep GitHub link to the right for consistency.
         {
           href: '/portfolio',
           label: 'Portfolio',
