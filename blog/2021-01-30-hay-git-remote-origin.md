@@ -6,7 +6,7 @@ author_url: https://github.com/Doko-Demo-Doa
 author_image_url: /img/avatar_doraemon.jpg
 image: https://i.ibb.co/6Rr2X6R/git-commands.png
 hide_table_of_contents: true
-tags: [vietnamese, tips, mac, terminal]
+tags: [vietnamese, git, terminal]
 ---
 
 ![git](https://i.ibb.co/6Rr2X6R/git-commands.png)
