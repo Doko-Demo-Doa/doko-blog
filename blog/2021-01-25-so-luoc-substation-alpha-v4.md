@@ -214,6 +214,7 @@ Các dòng trong phần định nghĩa style được đặt tên theo quy ướ
 | Comment | Comment. Có nội dung giống Dialogue / Style, nhưng khi play sẽ được bỏ qua. |
 | WrapStyle | Định nghĩa cách xuống dòng. <br>0: xuống dòng "thông minh", các dòng sẽ được chia đều <br>1: chỉ xuống dòng khi hết câu, cắt dòng bởi `\N` <br>2: không xuống dòng, `\n` `\N` đều cắt dòng <br>3: giống 0, nhưng dòng dưới sẽ rộng hơn. |
 
+```
 <h2><a name="6" href="#top">6. Dialogue event lines, [Events] section</a></h2>
 These contain the subtitle text, their timings, and how it should be displayed.<br>
 The fields which appear in each Dialogue line are defined by a <b>Format</b>: line, which must appear before any events in the section. The format line specifies how SSA will interpret all following Event lines. The field names must be spelled correctly, and are as follows:<br>
@@ -499,3 +500,4 @@ Each line of an encoded file is 80 characters long, except the last one, which m
 If the length of the file being encoded is not an exact multiple of 3, then for odd-number filelengths, the last byte is multiplied by hexadecimal 100, and the most significant 12 bits are converted to two characters as above. For even-number filelengths, the last two bytes are multiplied by hexadecimal 10000, and the most significant 18 bits are converted to three characters as above.<br>
 <br>
 There is no terminating code for the embedded files. If a new [section] starts in the script, or if another filename line is found, or the end of the script file is reached then the file is considered complete.
+```
