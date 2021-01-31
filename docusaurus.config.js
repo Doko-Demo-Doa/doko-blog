@@ -29,7 +29,7 @@ module.exports = {
   themeConfig: {
     prism: {
       theme: require('prism-react-renderer/themes/palenight'),
-      additionalLanguages: ['dart', 'rust'],
+      additionalLanguages: ['dart', 'rust', 'toml'],
     },
     navbar: {
       title: "Doko's lair",
