@@ -19,6 +19,17 @@ module.exports = {
   projectName: 'aniviet-hub', // Usually your repo name.
   plugins: [
     [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en", "ja", "vi"],
+        indexBlog: true,
+        indexDocs: false,
+        indexPages: true,
+        blogRouteBasePath: '/'
+      },
+    ],
+    [
       '@docusaurus/plugin-ideal-image',
       {
         sizes: [200]
