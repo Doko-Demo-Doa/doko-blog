@@ -49,4 +49,12 @@ Và rồi họ tìm thấy Iceman trong khu di tích năm xưa, tất nhiên là
 
 Một số nhà khoa học cảm thông với tình cảnh đó, họ cho rằng Iceman và các cá thể lai tạo kia xứng đáng có được tự do và hạnh phúc như những con người bình thường. Họ quyết định thả Iceman và nhóm các người "lai" kia đi.
 
-Một vài năm sau, Iceman có con với một người lai có tên Mikoto, vốn cũng được tạo ra từ DNA của Iceman, có mã hiệu #3510. Rồi họ bị bắt lại cơ sở nghiên cứu khoa học, Makoto và đứa trẻ bị mổ xẻ cơ thể để phục vụ cho việc nghiên cứu. Thì ra việc Mikoto có con vốn đã nằm trong sự theo dõi của nhóm khoa học này từ lâu. Vợ bị giết, đứa con không rõ sống chết ra sao, Iceman nổi điên và đánh thức vị thần trong anh. Vị thần đã "thỏa" ước nguyện của con người lúc đó: Bất tử, có thể sống trên mặt đất nhưng bị tước hết hình hài và trí tuệ, chỉ còn là khối nhầy màu đỏ đi lang thang khắp nơi, điều này cũng là giọt nước tràn ly, dẫn đến sự tuyệt chủng của loài người.
+Một vài năm sau, Iceman có con với một người lai có tên Mikoto, vốn cũng được tạo ra từ DNA của Iceman, có mã hiệu #3510. Rồi họ bị bắt lại cơ sở nghiên cứu khoa học, Mikoto và đứa trẻ bị mổ xẻ cơ thể để phục vụ cho việc nghiên cứu. Thì ra việc Mikoto có con vốn đã nằm trong sự theo dõi của nhóm khoa học này từ lâu. Vợ bị giết, đứa con không rõ sống chết ra sao, Iceman nổi điên và đánh thức vị thần trong anh. Vị thần đã "thỏa" ước nguyện của con người lúc đó: Bất tử, có thể sống trên mặt đất nhưng bị tước hết hình hài và trí tuệ, chỉ còn là khối nhầy màu đỏ đi lang thang khắp nơi, điều này cũng là giọt nước tràn ly, dẫn đến sự tuyệt chủng của loài người.
+
+## Nhân loại trong tương lai
+
+Hẳn khi chơi mọi người sẽ lấy làm ngạc nhiên rằng, với bối cảnh như trên và các cảnh trong game quá khác biệt, liệu có sự nhầm lẫn nào không? Không.
+
+Bối cảnh về nhà nước phong kiến quân chủ chuyên chế xuyên suốt cả series cũng chính là tương lai của loài người rất nhiều năm sau những sự kiện đã nêu ở phần "Bối cảnh" trên. Đây cũng chính là lore-twist rất hay mà đến cuối trò chơi mới lộ rõ. Quần thể người sinh sống cũng có phân biệt giai cấp như nông dân, chủ nô, thương nhân đến địa chủ, vua chúa,...
+
+(Còn tiếp...)
