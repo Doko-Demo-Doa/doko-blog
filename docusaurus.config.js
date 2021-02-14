@@ -38,6 +38,7 @@ module.exports = {
     'docusaurus-plugin-sass',
   ],
   themeConfig: {
+    metadatas: [{name: 'twitter:card', content: "Doko's lair"}],
     prism: {
       theme: require('prism-react-renderer/themes/palenight'),
       additionalLanguages: ['dart', 'rust', 'toml'],
@@ -49,6 +50,21 @@ module.exports = {
         src: 'img/pc_header_lower_doraemon.png',
       },
       items: [
+        {
+          label: 'Guides',
+          position: 'right', // or 'right'
+          items: [
+            {
+              label: 'Video encoding guide (2021 edition)',
+              href: '#',
+            },
+            {
+              label: 'Encoding tips',
+              href: '#',
+            },
+            // ... more items
+          ],
+        },
         {
           href: 'https://akari.aniviet.com/reader/',
           label: 'Reader',
