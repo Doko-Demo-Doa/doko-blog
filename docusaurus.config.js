@@ -16,7 +16,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Clip-sub', // Usually your GitHub org/user name.
-  projectName: 'aniviet-hub', // Usually your repo name.
+  projectName: 'doko-blog', // Usually your repo name.
   plugins: [
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
@@ -59,8 +59,8 @@ module.exports = {
               href: '#',
             },
             {
-              label: 'Encoding tips',
-              href: '#',
+              label: 'Fansubbing',
+              to: '/docs',
             },
             // ... more items
           ],
@@ -144,7 +144,11 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: false,
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl:
+            'https://github.com/Doko-Demo-Doa/doko-blog/tree/main/docs/',
+        },
         blog: {
           path: './blog',
           routeBasePath: '/',
@@ -152,7 +156,7 @@ module.exports = {
           blogDescription: 'My new blog with better access and readability.',
           showReadingTime: true,
           editUrl:
-            'https://github.com/Doko-Demo-Doa/aniviet-hub/tree/main/blog/',
+            'https://github.com/Doko-Demo-Doa/doko-blog/tree/main/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
