@@ -155,7 +155,7 @@ module.exports = {
             'https://github.com/Doko-Demo-Doa/aniviet-hub/tree/main/blog/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       },
     ],
