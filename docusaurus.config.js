@@ -51,21 +51,6 @@ module.exports = {
       },
       items: [
         {
-          label: 'Guides',
-          position: 'right', // or 'right'
-          items: [
-            {
-              label: 'Video encoding guide (2021 edition)',
-              href: '#',
-            },
-            {
-              label: 'Fansubbing',
-              to: '/docs',
-            },
-            // ... more items
-          ],
-        },
-        {
           href: 'https://akari.aniviet.com/reader/',
           label: 'Reader',
           position: 'right',
@@ -144,11 +129,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/Doko-Demo-Doa/doko-blog/tree/main/docs/',
-        },
+        docs: false,
         blog: {
           path: './blog',
           routeBasePath: '/',
