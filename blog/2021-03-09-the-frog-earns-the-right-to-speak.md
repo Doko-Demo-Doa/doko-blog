@@ -13,6 +13,8 @@ Ngày xửa ngày xưa, sâu thẳm trong một khu rừng già. Có một con �
 
 Mọi người trong khu rừng đều có thể nghe thấy tiếng ộp oạp của nó, và điều đó khiến họ vui. Do khu rừng rất dễ đi lạc, nên nhờ tiếng của con ếch mà họ có thể tìm được đường quay lại cái ao đó khá dễ dàng. Cũng có thể điều đó sẽ không còn đúng nữa nếu con ếch tiếp tục oàm oạp vào ban đêm, nhưng lúc ấy thì con ếch cũng đã quá lười và mệt mỏi khi màn đêm buông xuống mất rồi.
 
+<!--truncate-->
+
 Một ngày nọ, có một người lần đầu tiên đặt chân tới khu rừng. Một cô gái trẻ trong chiếc áo choàng lộng lẫy. Cô đi nhanh qua khu rừng, như thể đang chạy trốn điều gì đó, và không hề ngoảnh đầu lại. Rất nhiều con mắt đổ dồn về phía nàng Công chúa, nhưng không ai dám ngỏ lời giúp đỡ, mặc cho gã Thợ Săn Điên đang truy đuổi nàng.
 
 "Đây không phải phận sự của chúng ta", chúng nghĩ, "ta nên ngó lơ đi thì hơn". Trong khi tên Thợ Săn Điên, một kẻ không màng gì khác ngoài việc săn lùng con mồi để lãnh thưởng và kiếm tìm danh vọng, vẫn không chịu dừng bước. Không gì có thể thoát được đôi mắt sắc bén của hắn.
