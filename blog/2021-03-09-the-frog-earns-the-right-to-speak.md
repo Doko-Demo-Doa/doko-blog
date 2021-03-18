@@ -11,7 +11,7 @@ tags: [story, vietnamese, tell-me-why]
 
 Ngày xửa ngày xưa, sâu thẳm trong một khu rừng già. Có một con Ếch to trong một cái ao nhỏ. Ếch này là ếch cái. Mỗi ngày của nó đều là một ngày yên bình, chỉ có ăn, bơi và ngủ. Từ sáng đến tối, nó đều làm điều mà các con ếch khác đều làm, chỉ có điều là nó chơi nhiều hơn, ăn nhiều hơn, nhảy xa hơn. Nó thông minh hơn và kêu to hơn nữa.
 
-Mọi người trong khu rừng đều có thể nghe thấy tiếng ộp oạp của nó, và điều đó khiến họ vui. Do khu rừng rất dễ đi lạc, nên nhờ tiếng của con ếch mà họ có thể tìm được đường quay lại cái ao đó khá dễ dàng. Cũng có thể điều đó sẽ không còn đúng nữa nếu con ếch tiếp tục oàm oạp vào ban đêm, nhưng lúc ấy thì con ếch cũng đã quá lười và mệt mỏi khi màn đêm buông xuống mất rồi.
+Mọi người trong khu rừng đều có thể nghe thấy tiếng ộp oạp của nó, và điều đó khiến họ vui. Do khu rừng rất dễ đi lạc, nên nhờ tiếng của con ếch mà họ có thể tìm được đường quay lại cái ao đó khá dễ dàng. Cũng có thể điều đó sẽ không còn đúng nữa nếu con ếch tiếp tục oàm oạp vào ban đêm, nhưng nó cũng đã quá lười và mệt mỏi khi màn đêm buông xuống mất rồi.
 
 <!--truncate-->
 
