@@ -20,6 +20,8 @@ Chuỗi `Observable` và `Observer` rất quan trọng. Cần phải hiểu các
 
 Để bắt đầu, chúng ta lấy một ví dụ đơn giản của đơn giản:
 
+<!--truncate-->
+
 ```java
 Observable.just(1, 2, 3, 4, 5)
     .filter(x -> (x % 2) == 1)

@@ -16,8 +16,19 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Clip-sub', // Usually your GitHub org/user name.
-  projectName: 'aniviet-hub', // Usually your repo name.
+  projectName: 'doko-blog', // Usually your repo name.
   plugins: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en", "ja", "vi"],
+        indexBlog: true,
+        indexDocs: false,
+        indexPages: true,
+        blogRouteBasePath: '/'
+      },
+    ],
     [
       '@docusaurus/plugin-ideal-image',
       {
@@ -27,6 +38,7 @@ module.exports = {
     'docusaurus-plugin-sass',
   ],
   themeConfig: {
+    metadatas: [{name: 'twitter:card', content: "Doko's lair"}],
     prism: {
       theme: require('prism-react-renderer/themes/palenight'),
       additionalLanguages: ['dart', 'rust', 'toml'],
@@ -125,10 +137,10 @@ module.exports = {
           blogDescription: 'My new blog with better access and readability.',
           showReadingTime: true,
           editUrl:
-            'https://github.com/Doko-Demo-Doa/aniviet-hub/tree/main/blog/',
+            'https://github.com/Doko-Demo-Doa/doko-blog/tree/main/blog/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       },
     ],

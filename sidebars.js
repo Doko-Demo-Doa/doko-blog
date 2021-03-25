@@ -8,8 +8,14 @@
  */
 
 module.exports = {
-  someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
-  },
+  docs: [
+    {
+      type: 'category',
+      label: 'Fansubbing',
+      items: [
+        'fansubbing/01-loi-noi-dau',
+        'fansubbing/02-vi-tri',
+      ],
+    }
+  ],
 };
