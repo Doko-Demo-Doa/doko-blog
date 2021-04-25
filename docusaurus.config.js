@@ -41,7 +41,7 @@ module.exports = {
     metadatas: [{name: 'twitter:card', content: "Doko's lair"}],
     prism: {
       theme: require('prism-react-renderer/themes/palenight'),
-      additionalLanguages: ['dart', 'rust', 'toml'],
+      additionalLanguages: ['dart', 'java', 'python', 'rust', 'toml'],
     },
     navbar: {
       title: "Doko's lair",
@@ -136,8 +136,10 @@ module.exports = {
           blogTitle: "Doko's hub",
           blogDescription: 'My new blog with better access and readability.',
           showReadingTime: true,
-          editUrl:
-            'https://github.com/Doko-Demo-Doa/doko-blog/tree/main/blog/',
+          editUrl: undefined,
+          remarkPlugins: [
+            require("remark-mermaid-dataurl")
+          ],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
