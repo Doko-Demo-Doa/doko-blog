@@ -5,7 +5,7 @@ author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
 author_image_url: /img/avatar_doraemon.jpg
 hide_table_of_contents: false
-tags: [vietnamese, resident-evil, review, 2013]
+tags: [vietnamese, resident-evil, review, '2013']
 ---
 
 ![re6](https://i.ibb.co/dsNQ1db/residentevil6header.jpg)
