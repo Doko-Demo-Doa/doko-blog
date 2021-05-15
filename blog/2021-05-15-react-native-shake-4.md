@@ -40,3 +40,5 @@ Feel free to try and give me the feedback:
 ```bash
 npm install react-native-shake@4.0.2
 ```
+
+You can find the repo [here](https://github.com/Doko-Demo-Doa/react-native-shake).
