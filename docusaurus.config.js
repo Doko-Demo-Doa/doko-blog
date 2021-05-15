@@ -1,11 +1,6 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @format
- */
+const math = require('remark-math');
+const katex = require('rehype-katex');
+const mermaid = require("remark-mermaid-dataurl");
 
 module.exports = {
   title: "Doko's lair",
@@ -137,9 +132,8 @@ module.exports = {
           blogDescription: 'My new blog with better access and readability.',
           showReadingTime: true,
           editUrl: undefined,
-          remarkPlugins: [
-            require("remark-mermaid-dataurl")
-          ],
+          remarkPlugins: [math, mermaid],
+          rehypePlugins: [katex],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
