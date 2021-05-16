@@ -15,7 +15,7 @@ It's been a while, but I can finally come back to this project. With this new ve
 - Shorter API. It's now just:
 
 ```ts
-RNShake.addEventListener(() => {
+RNShake.addListener(() => {
   // Your code...
 });
 ```
