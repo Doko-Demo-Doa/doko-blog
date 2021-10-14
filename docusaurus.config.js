@@ -1,7 +1,11 @@
 const math = require('remark-math');
 const katex = require('rehype-katex');
-const mermaid = require("remark-mermaid-dataurl");
+const mermaid = require('remark-mermaid-dataurl');
 
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
+/** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: "Doko's lair",
   tagline: 'Wall of text',
@@ -14,21 +18,21 @@ module.exports = {
   projectName: 'doko-blog', // Usually your repo name.
   plugins: [
     [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
+      require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
-        language: ["en", "ja", "vi"],
+        language: ['en', 'ja', 'vi'],
         indexBlog: true,
         indexDocs: false,
         indexPages: true,
-        blogRouteBasePath: '/'
+        blogRouteBasePath: '/',
       },
     ],
     [
       '@docusaurus/plugin-ideal-image',
       {
-        sizes: [200]
-      }
+        sizes: [200],
+      },
     ],
     'docusaurus-plugin-sass',
   ],
@@ -118,6 +122,10 @@ module.exports = {
       ],
       // Please do not remove the credits, help to publicize Docusaurus :)
       copyright: `Copyright © ${new Date().getFullYear()} Quan Pham. All rights reserved.`,
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
     },
   },
   presets: [

@@ -56,5 +56,9 @@ module.exports = {
     'react/jsx-filename-extension': OFF,
     'react-hooks/rules-of-hooks': ERROR,
     'react/prop-types': OFF, // PropTypes aren't used much these days.
+    'import/no-unresolved': [
+      ERROR,
+      {ignore: ['^@theme', '^@docusaurus', '^@generated', 'unist', 'mdast']},
+    ],
   },
 };
