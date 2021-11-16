@@ -18,3 +18,5 @@ The list short, but decent, by my standard:
 - Age of Empires (Microsoft)
 - Metro 2033 Redux (4A)
 - Resident Evil 3 Remake (Capcom)
+- Dishonored (yes, the first one), feelsbadman
+- Yakuza 0
