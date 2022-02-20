@@ -37,7 +37,7 @@ module.exports = {
     'docusaurus-plugin-sass',
   ],
   themeConfig: {
-    metadatas: [{name: 'twitter:card', content: "Doko's lair"}],
+    metadata: [{name: 'twitter:card', content: "Doko's lair"}],
     prism: {
       theme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['dart', 'java', 'python', 'rust', 'objc', 'toml'],
