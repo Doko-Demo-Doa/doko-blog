@@ -39,8 +39,15 @@ module.exports = {
   themeConfig: {
     metadata: [{name: 'twitter:card', content: "Doko's lair"}],
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
-      additionalLanguages: ['dart', 'java', 'python', 'rust', 'objc', 'toml', 'solidity'],
+      additionalLanguages: [
+        'dart',
+        'java',
+        'python',
+        'rust',
+        'objc',
+        'toml',
+        'solidity',
+      ],
     },
     navbar: {
       title: "Doko's lair",
