@@ -1,6 +1,5 @@
 # Reference: <https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions>
 
-
 # Workflow label
 name: Build pages
 
@@ -20,6 +19,10 @@ jobs:
     runs-on: [self-hosted]
     timeout-minutes: 5
     steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Check node version
+        run: node -v
       - name: NPM install
         run: npm ci
       - name: Build the pages
