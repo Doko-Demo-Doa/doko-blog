@@ -1,0 +1,26 @@
+# Reference: <https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions>
+
+
+# Workflow label
+name: Build pages
+
+# Workflow trigger
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Workflow tasks
+jobs:
+  build:
+    name: Build docusaurus pages
+    runs-on: [self-hosted]
+    timeout-minutes: 5
+    steps:
+      - name: NPM install
+        run: npm ci
+      - name: Build the pages
+        run: npm run build
