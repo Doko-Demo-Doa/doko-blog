@@ -58,7 +58,7 @@ Ví dụ:
 
 Làm sao để tính? Ý tưởng là tính ra độ dốc:
 
-![slope](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210322131209/1147.png)
+![slope](/img/math/slope.png)
 
 Độ dốc của 2 điểm (p1, p2): σ = (y2 - y1)/(x2 - x1) Độ dốc của 2 điểm (p2, p3): τ = (y3 - y2)/(x3 - x2)
 
@@ -107,7 +107,7 @@ class Clocker {
         int val = (p2.y - p1.y) * (p3.x - p2.x) -
                 (p2.x - p1.x) * (p3.y - p2.y);
 
-        if (val == 0) return 0;  // colinear
+        if (val == 0) return 0;  // thẳng hàng
 
         return (val > 0) ? 1 : 2;
     }
@@ -184,6 +184,8 @@ Với thuật toán này thì ta có:
 
 Các bước tiếp theo:
 
+![slope](/img/math/jarvis-match.jpg)
+
 1. Để tìm ra `q`, ta cứ lấy `q` làm điểm tiếp theo, sau đó duyệt qua tất cả các điểm. Với điểm `i` bất kì, nếu `i` ngược chiều kim đồng hồ hơn, ví dụ: orientation(p, i, q) là ngược chiều kim đồng hồ, thì ta gán q thành i. Kết quả `q` cuối cùng sẽ là điểm ban đầu (tức `p`).
 2. `next[p] = q` (Đặt `q` làm điểm tiếp theo của `p` để xét tiếp).
 3. `p = q` (Đặt `p` thành `q` cho lần duyệt tiếp).
@@ -213,8 +215,8 @@ int orientation(Point p, Point q, Point r)
     int val = (q.y - p.y) * (r.x - q.x) -
               (q.x - p.x) * (r.y - q.y);
 
-    if (val == 0) return 0;  // collinear
-    return (val > 0)? 1: 2; // clock or counterclock wise
+    if (val == 0) return 0;
+    return (val > 0)? 1: 2;
 }
 
 void convexHull(Point points[], int n)
