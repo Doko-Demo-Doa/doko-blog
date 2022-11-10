@@ -8,8 +8,6 @@ tags: [vietnamese, programming, mathematics]
 hide_table_of_contents: true
 ---
 
-[Ref 1](https://www.geeksforgeeks.org/orientation-3-ordered-points/) - [Ref 2](https://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/)
-
 Gần đây khi làm việc với Aegisub và các công cụ karaoke, tôi nhận thấy việc tạo ra các hiệu ứng phức tạp liên quan đến hình học không đơn giản.
 
 Ví dụ nếu muốn tạo hiệu ứng vỡ chữ sang các mảnh tam giác, ta cần đến thuật toán Jarviss hoặc Graham và Delauney. Trong đó:
@@ -28,12 +26,12 @@ graph LR
     B -- Thuận chiều --> D;
 ```
 
-__Thuật toán Jarvis__ hay còn gọi là thuật toán chiều kim đồng hồ. Ý tưởng:
+**Thuật toán Jarvis** hay còn gọi là thuật toán chiều kim đồng hồ. Ý tưởng:
 
 - Ta bắt đầu từ điểm bên trái nhất (điểm có tọa độ `x` nhỏ nhất).
 - Từ điểm `x` này ta sẽ tiến hành "bao" các điểm còn lại theo hướng ngược chiều kim đồng hồ.
 
-Vậy câu hỏi là, làm sao xác định được điểm tiếp theo? Câu trả lời là __xét hướng__.
+Vậy câu hỏi là, làm sao xác định được điểm tiếp theo? Câu trả lời là **xét hướng**.
 
 ### Xác định hướng của 3 điểm (clockwise)
 
@@ -62,8 +60,7 @@ Làm sao để tính? Ý tưởng là tính ra độ dốc:
 
 ![slope](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210322131209/1147.png)
 
-Độ dốc của 2 điểm (p1, p2): σ = (y2 - y1)/(x2 - x1)
-Độ dốc của 2 điểm (p2, p3): τ = (y3 - y2)/(x3 - x2)
+Độ dốc của 2 điểm (p1, p2): σ = (y2 - y1)/(x2 - x1) Độ dốc của 2 điểm (p2, p3): τ = (y3 - y2)/(x3 - x2)
 
 Nếu `σ > τ`, hướng sẽ là thuận kim đồng hồ (quay phải).
 
@@ -141,28 +138,28 @@ class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-  
+
 def orientation(p1, p2, p3):
     val = (float(p2.y - p1.y) * (p3.x - p2.x)) - (float(p2.x - p1.x) * (p3.y - p2.y))
     if (val > 0):
-          
+
         # Thuận
         return 1
     elif (val < 0):
-          
+
         # Ngược
         return 2
     else:
-          
+
         # Thẳng hàng
         return 0
-  
+
 p1 = Point(0, 0)
 p2 = Point(4, 4)
 p3 = Point(1, 2)
-  
+
 o = orientation(p1, p2, p3)
-  
+
 if (o == 0):
     print("Linear")
 elif (o == 1):
@@ -177,12 +174,285 @@ else:
 
 Đọc đến đây thì ta gọi chút nhé:
 
-- `p`: Điểm đã xác định là nằm trong convex hull. Coi `q` là tâm đồng  hồ.
+- `p`: Điểm đã xác định là nằm trong convex hull. Coi `q` là tâm đồng hồ.
 - `q`: Là điểm tiếp theo sao cho bộ ba `(p, q, r)` với `r` là điểm bất kì nào khác trong bộ điểm đầu vào.
+
+Với thuật toán này thì ta có:
+
+- Độ phức tạp theo thời gian: O(1)
+- Auxiliary Space O(1)
 
 Các bước tiếp theo:
 
-1. Để tìm ra `q`, ta cứ lấy `q` làm điểm tiếp theo, sau đó duyệt qua tất cả các điểm. Với điểm `i` bất kì, nếu `i` ngược chiều kim đồng hồ hơn,
-ví dụ: orientation(p, i, q) là ngược chiều kim đồng hồ, thì ta gán q thành i. Kết quả `q` cuối cùng sẽ là điểm ban đầu (tức `p`).
+1. Để tìm ra `q`, ta cứ lấy `q` làm điểm tiếp theo, sau đó duyệt qua tất cả các điểm. Với điểm `i` bất kì, nếu `i` ngược chiều kim đồng hồ hơn, ví dụ: orientation(p, i, q) là ngược chiều kim đồng hồ, thì ta gán q thành i. Kết quả `q` cuối cùng sẽ là điểm ban đầu (tức `p`).
 2. `next[p] = q` (Đặt `q` làm điểm tiếp theo của `p` để xét tiếp).
 3. `p = q` (Đặt `p` thành `q` cho lần duyệt tiếp).
+
+Dưới đây là code của thuật toán trên:
+
+<Tabs
+  defaultValue="python"
+  values={[
+    {label: 'C++', value: 'cpp'},
+    {label: 'Java', value: 'java'},
+    {label: 'Python', value: 'python'},
+]}>
+<TabItem value="cpp">
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Point
+{
+    int x, y;
+};
+
+int orientation(Point p, Point q, Point r)
+{
+    int val = (q.y - p.y) * (r.x - q.x) -
+              (q.x - p.x) * (r.y - q.y);
+
+    if (val == 0) return 0;  // collinear
+    return (val > 0)? 1: 2; // clock or counterclock wise
+}
+
+void convexHull(Point points[], int n)
+{
+    if (n < 3) return;
+
+    vector<Point> hull;
+
+    // Tìm điểm tận cùng bên trái
+    int l = 0;
+    for (int i = 1; i < n; i++)
+        if (points[i].x < points[l].x)
+            l = i;
+
+    int p = l, q;
+    do
+    {
+        hull.push_back(points[p]);
+
+        q = (p+1)%n;
+        for (int i = 0; i < n; i++)
+        {
+           if (orientation(points[p], points[i], points[q]) == 2)
+               q = i;
+        }
+
+        p = q;
+
+    } while (p != l);
+
+    for (int i = 0; i < hull.size(); i++)
+        cout << "(" << hull[i].x << ", "
+              << hull[i].y << ")\n";
+}
+
+int main()
+{
+    Point points[] = {{0, 3}, {2, 2}, {1, 1}, {2, 1},
+                      {3, 0}, {0, 0}, {3, 3}};
+    int n = sizeof(points)/sizeof(points[0]);
+    convexHull(points, n);
+    return 0;
+}
+```
+
+</TabItem>
+<TabItem value="java">
+
+```java
+import java.util.*;
+
+class Point
+{
+    int x, y;
+    Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+}
+
+class GFG {
+    public static int orientation(Point p, Point q, Point r)
+    {
+        int val = (q.y - p.y) * (r.x - q.x) -
+                  (q.x - p.x) * (r.y - q.y);
+
+        if (val == 0) return 0;
+        return (val > 0)? 1: 2;
+    }
+
+    public static void convexHull(Point points[], int n)
+    {
+        if (n < 3) return;
+
+        Vector<Point> hull = new Vector<Point>();
+
+        int l = 0;
+        for (int i = 1; i < n; i++)
+            if (points[i].x < points[l].x)
+                l = i;
+
+        int p = l, q;
+        do
+        {
+            hull.add(points[p]);
+
+            q = (p + 1) % n;
+
+            for (int i = 0; i < n; i++)
+            {
+               if (orientation(points[p], points[i], points[q])
+                                                   == 2)
+                   q = i;
+            }
+
+            p = q;
+
+        } while (p != l);
+
+        for (Point temp : hull)
+            System.out.println("(" + temp.x + ", " +
+                                temp.y + ")");
+    }
+
+    public static void main(String[] args)
+    {
+
+        Point points[] = new Point[7];
+        points[0]=new Point(0, 3);
+        points[1]=new Point(2, 3);
+        points[2]=new Point(1, 1);
+        points[3]=new Point(2, 1);
+        points[4]=new Point(3, 0);
+        points[5]=new Point(0, 0);
+        points[6]=new Point(3, 3);
+
+        int n = points.length;
+        convexHull(points, n);
+
+    }
+}
+```
+
+</TabItem>
+<TabItem value="python">
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+def Left_index(points):
+
+    minn = 0
+    for i in range(1,len(points)):
+        if points[i].x < points[minn].x:
+            minn = i
+        elif points[i].x == points[minn].x:
+            if points[i].y > points[minn].y:
+                minn = i
+    return minn
+
+def orientation(p, q, r):
+    if val == 0:
+        return 0
+    elif val > 0:
+        return 1
+    else:
+        return 2
+
+def convexHull(points, n):
+    if n < 3:
+        return
+
+    l = Left_index(points)
+
+    hull = []
+
+    p = l
+    q = 0
+    while(True):
+
+        hull.append(p)
+
+        q = (p + 1) % n
+
+        for i in range(n):
+
+            if(orientation(points[p],
+                           points[i], points[q]) == 2):
+                q = i
+
+
+        p = q
+
+        if(p == l):
+            break
+
+    for each in hull:
+        print(points[each].x, points[each].y)
+
+points = []
+points.append(Point(0, 3))
+points.append(Point(2, 2))
+points.append(Point(1, 1))
+points.append(Point(2, 1))
+points.append(Point(3, 0))
+points.append(Point(0, 0))
+points.append(Point(3, 3))
+
+convexHull(points, len(points))
+```
+
+</TabItem>
+</Tabs>
+
+Đầu ra: tập các điểm liên kết tạo thành Convex Hull:
+
+```
+(0, 3)
+(0, 0)
+(3, 0)
+(3, 3)
+```
+
+**Độ phức tạp tời gian**: O(m \* n), với n là số điểm đầu vào và m là số đầu ra (hay các điểm tạo thân), và m <= n. Với mỗi điểm m, ta xét tất cả các điểm khác để biết vị trí tiếp theo.
+
+**Worst case theo độ phức tạp thời gian**: O(n2). Xảy ra khi tất cả các điểm đều nằm trên bao lồi (m = n).
+
+**Auxiliary Space**: O(n), do n không gian phụ trợ đã được lấp đầy.
+
+**Lưu ý**: Các đoạn code trên sẽ cho ra các kết quả khác nhau với các đầu vào có thứ tự khác nhau, nếu như có các điểm thẳng hàng trên bao lồi. Ví dụ:
+
+Đầu vào:
+
+```
+(0, 3), (0, 0), (0, 1), (3, 0), (3, 3)
+```
+
+sẽ cho ra:
+
+```
+(0, 3) (0, 0) (3, 0) (3, 3)
+```
+
+một ví dụ khác, đầu vào:
+
+```
+(0, 3), (0, 1), (0, 0), (3, 0), (3, 3)
+```
+
+sẽ cho ra:
+
+```
+(0, 3) (0, 1) (0, 0) (3, 0) (3, 3)
+```
+
+Nguồn tham khảo:
+
+http://www.cs.uiuc.edu/~jeffe/teaching/373/notes/x05-convexhull.pdf http://www.dcs.gla.ac.uk/~pat/52233/slides/Hull1x1.pdf
