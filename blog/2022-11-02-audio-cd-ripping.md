@@ -45,3 +45,5 @@ Click vào nút Configure, popup sau có thể sẽ hiện ra. Nội dung:
 > _Congratulations, AccurateRip has been set up correctly. It is recommended that this disc is ripped to test the accuracy of your drive. Calculated offset value: +6 samples, +24 bytes._
 
 Logo AccurateRip góc dưới bên phải sẽ cho biết AccurateRip đã được calibrate.
+
+(Còn tiếp...)
