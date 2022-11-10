@@ -186,7 +186,7 @@ Các bước tiếp theo:
 
 ![slope](/img/math/jarvis-match.jpg)
 
-1. Để tìm ra `q`, ta cứ lấy `q` làm điểm tiếp theo, sau đó duyệt qua tất cả các điểm. Với điểm `i` bất kì, nếu `i` ngược chiều kim đồng hồ hơn, ví dụ: orientation(p, i, q) là ngược chiều kim đồng hồ, thì ta gán q thành i. Kết quả `q` cuối cùng sẽ là điểm ban đầu (tức `p`).
+1. Để tìm ra `q`, ta lấy `q` làm điểm tiếp theo, sau đó duyệt qua tất cả các điểm. Với điểm `i` bất kì, nếu `i` ngược chiều kim đồng hồ hơn (tính theo giá trị góc), ví dụ: orientation(p, i, q) là ngược chiều kim đồng hồ, thì ta gán q thành i. Kết quả `q` cuối cùng sẽ là điểm ban đầu (tức `p`).
 2. `next[p] = q` (Đặt `q` làm điểm tiếp theo của `p` để xét tiếp).
 3. `p = q` (Đặt `p` thành `q` cho lần duyệt tiếp).
 
