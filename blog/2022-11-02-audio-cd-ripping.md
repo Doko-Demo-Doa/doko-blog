@@ -46,4 +46,41 @@ Click vào nút Configure, popup sau có thể sẽ hiện ra. Nội dung:
 
 Logo AccurateRip góc dưới bên phải sẽ cho biết AccurateRip đã được calibrate.
 
-(Còn tiếp...)
+### Tùy chỉnh trong EAC
+
+- Mở phần options bằng cách vào EAC -> EAC Options...
+
+![eac_eac_menu](/img/audio-cd-guide/eac_eac_menu.png)
+
+- Click vào tab **Extraction** và điền như sau:
+  - Tick vào "Full up missing offset samples with silence" (mặc định là có tick)
+  - Tick vào "Synchronize between tracks"
+  - Chỉnh "Error recovery quality" lên mức "High"
+  - Còn lại để như mặc định
+
+![eac_options_extraction](/img/audio-cd-guide/eac_options_extraction.png)
+
+- Click vào tab **General** và điền như sau:
+  - Tick vào "Use alternate CD Play routines"
+  - Tick vào "Disable 'CD Autostart' for audio and data CDs while EAC running"
+  - Tick vào "On unknown CDs" và chọn "automatically access online metadata database"
+  - Tick vào "Create log files always in english language"
+  - Chỗ còn lại để mặc định.
+
+![eac_options_general](/img/audio-cd-guide/eac_options_general.png)
+
+- Click vào tab **Tools** và điền như sau:
+  - Tick vào "Retrieve UPC / ISRC codes in CUE sheet generation"
+  - Tick vào "Use CD-Text information in CUE sheet generation"
+  - Tick vào "Automatically write status report after extraction"
+  - Tick vào "Append checksum to status report"
+  - Tick vào "Convert BMP image files automatically to JPG"
+  - Bỏ tick vào "On extraction, start external compressors queued in the backround"
+  - Bỏ tick vào "Activate beginner mode, disable all advanced features"
+  - Chỗ còn lại để mặc định.
+
+![eac_options_tools](/img/audio-cd-guide/eac_options_tools.png)
+
+- Click vào tab **Normalize** và bỏ tick "**Normalize**"
+
+![eac_options_normalize](/img/audio-cd-guide/eac_options_normalize.png)
