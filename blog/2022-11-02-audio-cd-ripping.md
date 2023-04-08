@@ -199,3 +199,46 @@ Logo AccurateRip góc dưới bên phải sẽ cho biết AccurateRip đã đư�
 ![eac_metadata_options_freedb](/img/audio-cd-guide/eac_metadata_options_freedb.png)
 
 Và chúng ta đã xong khâu chuẩn bị, giờ thì bắt đầu rip đĩa CD thật này.
+
+## Rip CD
+
+Việc rip CD sẽ yêu cầu làm thêm một số bước, cũng có nghĩa là sẽ tốn thêm chút thời gian. Tuy nhiên kết quả đạt được sẽ tốt hơn đa số các phần mềm khác.
+
+Các bước bạn đã làm phía trên là chuẩn bị cho chương trình, làm một lần thôi. Còn các bước dưới đây là các bước bạn sẽ cần làm lại mỗi khi rip một đĩa CD mới. Lưu ý là các bước dưới đây cần được thực hiện theo thứ tự được viết.
+
+### Metadata
+
+Bước đầu tiên là download metadata cho các file từ **CUETools metadata database**
+
+- Đút đĩa vào ổ
+- Click vào mũi tên nhỏ bên cạnh nút có biểu tượng 2 đĩa CD và một dấu cộng như hình, sau đó chọn **CUETools DB Metadata Plugin V2.1.6** (hoặc mới hơn)
+
+![eac_select_metadata_provider_cuetools_db_metadata_plugin-1024x467](/img/audio-cd-guide/eac_select_metadata_provider_cuetools_db_metadata_plugin-1024x467.png)
+
+- Click vào chính giữa biểu tượng đó
+- Click vào nút **Yes**
+
+![eac_metadata_provider_warning](/img/audio-cd-guide/eac_metadata_provider_warning.png)
+
+Chọn kết quả sát nhất và nhấn **OK**
+
+![eac_metadata_provider_ctdb_metadata_lookup](/img/audio-cd-guide/eac_metadata_provider_ctdb_metadata_lookup.png)
+
+Sau khi metadata được tổng hợp lại, kiểm tra xem đã đúng chưa. Tất cả các trường metadata giờ có thể được chỉnh sửa ở trong cửa sổ chính của EAC.
+
+## Nhận diện Gaps
+
+"Gaps" ở đây là các khoảng lặng giữa các track nhạc. Các khoảng lặng này không ảnh hưởng đến chất lượng âm thanh, nhưng phải được phát hiện ra để quá trình copy được thực hiện đứng.
+
+- Click vào **Action** và tick vào **Append Gaps To Previous track (default)**.
+- Cũng trong menu **Action**, click **Detect Gaps** và đợi nó thực hiện xong. Sau khi xong thì mục "Gap" sẽ chuyển từ "unknown" sang mã thời gian.
+
+![eac_action_detect_gaps-1024x466](/img/audio-cd-guide/eac_action_detect_gaps-1024x466.png)
+
+## Tạo CUE Sheet
+
+CUE Sheet là một file văn bản nhỏ, lưu trữ thông tin về cách và nơi các track được ghi lại lên ổ đĩa cứng, kèm theo một số thông tin có thể sẽ cần thiết nếu sau này bạn burn những track nhạc này lên đĩa CD khác. CUE Sheet không phải bắt buộc, nhưng khuyến cáo là nên tạo để có thông tin kiểm chứng sau này.
+
+- Click **Action** -> **Create CUE Sheet** -> **Multiple WAV Files With Gaps… (Noncompliant)** và đợi analyzing xong.
+
+![eac_action_create_cue_sheet-1024x466](/img/audio-cd-guide/eac_action_create_cue_sheet-1024x466.png)
