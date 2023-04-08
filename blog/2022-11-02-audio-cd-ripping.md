@@ -228,7 +228,7 @@ Sau khi metadata được tổng hợp lại, kiểm tra xem đã đúng chưa. 
 
 ## Nhận diện Gaps
 
-"Gaps" ở đây là các khoảng lặng giữa các track nhạc. Các khoảng lặng này không ảnh hưởng đến chất lượng âm thanh, nhưng phải được phát hiện ra để quá trình copy được thực hiện đứng.
+"Gaps" ở đây là các khoảng lặng giữa các track nhạc. Các khoảng lặng này không ảnh hưởng đến chất lượng âm thanh, nhưng phải được phát hiện ra để quá trình copy và cắt bài được thực hiện đứng.
 
 - Click vào **Action** và tick vào **Append Gaps To Previous track (default)**.
 - Cũng trong menu **Action**, click **Detect Gaps** và đợi nó thực hiện xong. Sau khi xong thì mục "Gap" sẽ chuyển từ "unknown" sang mã thời gian.
@@ -242,3 +242,118 @@ CUE Sheet là một file văn bản nhỏ, lưu trữ thông tin về cách và 
 - Click **Action** -> **Create CUE Sheet** -> **Multiple WAV Files With Gaps… (Noncompliant)** và đợi analyzing xong.
 
 ![eac_action_create_cue_sheet-1024x466](/img/audio-cd-guide/eac_action_create_cue_sheet-1024x466.png)
+
+## Extract và nén file
+
+Bước còn lại cuối cùng là rip. Bước này sẽ xả file từ CD, kiểm tra và sửa lỗi (nếu có), sau đó nén file dưới định dạng FLAC.
+
+- Click **Action** -> **Test & Copy Selected Tracks** -> **Compressed...**
+
+![eac_action_test_and_copy_selected_tracks-1024x466](/img/audio-cd-guide/eac_action_test_and_copy_selected_tracks-1024x466.png)
+
+- Popup **Extraction Audio Data** sẽ hiện ra, báo hiệu quá trình rip bắt đầu. Tùy theo tình trạng đĩa CD, quá trình này có thể sẽ lâu (nhưng không quá lâu).
+
+![eac_extracting_audio_data](/img/audio-cd-guide/eac_extracting_audio_data.png) ![eac_extracting_audio_data_done](/img/audio-cd-guide/eac_extracting_audio_data_done.png)
+
+Sau khi hoàn thành, folder đầu ra sẽ chứa các file `.flac`, file `.log` và `.cue` (và cả file `.jpg` cover nếu có).
+
+![eac_output_files-1024x679](/img/audio-cd-guide/eac_output_files-1024x679.png)
+
+## Kiểm tra thành quả
+
+Sau quá trình xả và nén, ta nên kiểm tra lại quá trình đó đã thành công (hay không). Đầu tiên là kiểm tra xem tất cả các file được lưu dạng `.flac`, do cũng có lúc bộ mã hóa thất bại nhưng không báo trong file log.
+
+### Kiểm tra file .log
+
+Bạn sẽ cần mở file `.log` bằng chương trình đọc văn bản nào đó (Notepad chẳng hạn) và kiểm tra tình hình:
+
+Nếu rip thành công thì file log sẽ trông như này:
+
+```
+All tracks accurately ripped
+
+No errors occurred
+
+End of status report
+```
+
+Nếu thất bại thì trông như này, kèm theo thông tin cũng như các lỗi mà EAC không sửa được:
+
+```
+Some tracks could not be verified as accurate
+
+There were errors
+
+End of status report
+```
+
+Nếu có lỗi, bạn có thể nhìn vào từng track một để xem.
+
+Trong ví dụ phía dưới, có ghi là quá trình Copy hoàn tất, nhưng không thể kiểm tra ở đoạn 0:02:05 - 0:02:11, vậy là có vấn đề ở đoạn này. Có lúc có thể nhận diện được tự động, cũng có lúc không, nên cần kiểm tra bằng tai.
+
+```
+Track 16
+
+     Filename C:\EAC_OUTPUT\16 - The Nightfall' (fripside).wav
+
+     Suspicious position 0:02:05 - 0:02:11
+
+     Peak level 100.0 %
+     Extraction speed 0.7 X
+     Track quality 96.9 %
+     Test CRC 434BD8B4
+     Copy CRC D020485F
+     Cannot be verified as accurate (confidence 3)  [254AB38A], AccurateRip returned [E5981F6F]  (AR v2)
+     Copy finished
+```
+
+Còn đây là khi rip thành công, có chữ "Accurately ripped" và "Copy OK"
+
+Track quality có lúc bị dưới 100%, có nghĩa là cần chỉnh sửa. Nhưng lỗi đã được sửa tự động và bản copy này hoàn hảo 100%, không bị hụt chất lượng.
+
+```
+Track  2
+
+     Filename C:\EAC_OUTPUT\02 - The Pitcher - Little Bitch.wav
+
+     Peak level 100.0 %
+     Extraction speed 0.9 X
+     Track quality 99.9 %
+     Test CRC 5F2A6E3A
+     Copy CRC 5F2A6E3A
+     Accurately ripped (confidence 1)  [FAA3D707]  (AR v2)
+     Copy OK
+```
+
+Ở cuối file log sẽ có báo cáo riêng của CUETools DB Plugin, nó dùng để so sánh với các bản rip khác có trên hệ thống. Chỉ cần thấy "Accurately ripped" và tham chiếu "CTDB TOCID" trùng với kết quả gửi lên là ok (tham khảo bên dưới).
+
+```
+---- CUETools DB Plugin V2.1.6
+
+[CTDB TOCID: KyVydx1nYbdEYuAsw3Ke1nt8Qks-] found
+Submit result: KyVydx1nYbdEYuAsw3Ke1nt8Qks- has been confirmed
+Track | CTDB Status
+1 | (4/5) Accurately ripped
+2 | (4/5) Accurately ripped
+3 | (4/5) Accurately ripped
+4 | (4/5) Accurately ripped
+5 | (4/5) Accurately ripped
+6 | (4/5) Accurately ripped
+7 | (4/5) Accurately ripped
+8 | (4/5) Accurately ripped
+9 | (4/5) Accurately ripped
+10 | (4/5) Accurately ripped
+11 | (4/5) Accurately ripped
+12 | (4/5) Accurately ripped
+13 | (4/5) Accurately ripped
+14 | (4/5) Accurately ripped
+15 | (4/5) Accurately ripped
+16 | (4/5) Accurately ripped
+17 | (4/5) Accurately ripped
+```
+
+## Kết luận
+
+Vậy là xong quá trình rip đĩa CD. Dung lượng rip đĩa thì tùy CD nhưng sẽ rơi vào đâu đó khoảng 10-25MB / track. Bạn nên nén các file này vào file zip/rar để bảo quản về sau.
+
+Have fun
