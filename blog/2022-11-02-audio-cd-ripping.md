@@ -97,7 +97,7 @@ Logo AccurateRip góc dưới bên phải sẽ cho biết AccurateRip đã đư�
 
 ![eac_options_charracter_replacements](/img/audio-cd-guide/eac_options_charracter_replacements.png)
 
-- Click vào tab **Directories** và điền theo ý muốn, không thì để nguyên. Đây là nơi chỉ định đường dẫn các file kết quả xuất ra. If you want a fixed location for your rips, then select “Use this directory“, “Browse…” and select folder.
+- Click vào tab **Directories** và điền theo ý muốn, không thì để nguyên. Đây là nơi chỉ định đường dẫn các file kết quả xuất ra. If you want a fixed location for your rips, then select **Use this directory**, **Browse…** and select folder.
 
 ![eac_options_directories](/img/audio-cd-guide/eac_options_directories.png)
 
@@ -143,3 +143,59 @@ Logo AccurateRip góc dưới bên phải sẽ cho biết AccurateRip đã đư�
 ![eac_drive_options_gap_detection](/img/audio-cd-guide/eac_drive_options_gap_detection.png)
 
 - Click "**OK**"
+
+### Compression Options
+
+- Mở Compression Options bằng cách vào menu **EAC -> Compression Options...**
+
+![eac_eac_menu](/img/audio-cd-guide/eac_eac_menu.png)
+
+- Click vào tab **External Compression** và điền như sau:
+
+  - Chọn **Use external program for compression**
+  - Chọn **Parameter passing scheme:** **User Defined Encoder**
+  - Chọn **Use external program for compression**.
+  - Chọn **Parameter passing scheme: User Defined Encoder**.
+  - Viết `.flac` trong phần **Use file extension:**.
+  - Phía dưới **Program, including path used for compression** chọn đường dẫn đén file `flac.exe` (có trong EAC `program files, Exact Audio Copy\Flac\flac.exe`)
+  - In the **Additional command-line options**, copy và paste vào đoạn bên dưới:
+
+  ```
+  -8 -V -T "ARTIST=%artist%" -T "TITLE=%title%" -T "ALBUM=%albumtitle%" -T "DATE=%year%" -T "TRACKNUMBER=%tracknr%" -T "GENRE=%genre%" -T "PERFORMER=%albuminterpret%" -T "COMPOSER=%composer%" %haslyrics%–tag-from-file=LYRICS="%lyricsfile%"%haslyrics% -T "ALBUMARTIST=%albumartist%" -T "DISCNUMBER=%cdnumber%" -T "TOTALDISCS=%totalcds%" -T "TOTALTRACKS=%numtracks%" -T "COMMENT=%comment%" %source% -o %dest%
+  ```
+
+  - Tick vào **Delete WAV after compression** (mặc định)
+  - Tick **Use CRC check** (mặc định)
+  - Bỏ tick **Add ID3 tag**
+  - Tick **Check for external programs return code**
+
+![eac_compression_options_external_compression](/img/audio-cd-guide/eac_compression_options_external_compression.png)
+
+- Click vào tab **ID3 tag** và điền như sau:
+  - Bỏ tick tất cả, trừ **Write cover image to extraction folder**
+  - Ở ô **naming scheme**: viết "Cover" (hoặc bất kì tên file cover nào mà bạn muốn đặt)
+  - Click **OK**
+
+![eac_compression_options_id3_tag](/img/audio-cd-guide/eac_compression_options_id3_tag.png)
+
+### Metadata Options
+
+- Mở Compression Options bằng cách vào menu **EAC -> Metadata Options...**
+
+![eac_eac_menu](/img/audio-cd-guide/eac_eac_menu.png)
+
+- Click vào tab **Metadata Provider** và điền như sau:
+  - Ở ô **Select metadata provider** chọn **CUETools DB Metadata Plugin V2.1.6** (hoặc phiên bản nào đó mới hơn)
+  - Click **Show options of the selected metadata provider**
+  - Chọn **Extensive** phía dưới **Metadata search mode** và **Large** phía dưới **Cover search mode**. Cả 2 lựa chọn này đều không bắt buộc.
+  - Click **OK**.
+
+![eac_metadata_options_metadata_provider](/img/audio-cd-guide/eac_metadata_options_metadata_provider.png)
+
+- Click vào tab **freedb** và điền như sau:
+  - Ở ô **Your e-mail address**: điền email vào, email giả cũng được.
+  - Click **OK**
+
+![eac_metadata_options_freedb](/img/audio-cd-guide/eac_metadata_options_freedb.png)
+
+Và chúng ta đã xong khâu chuẩn bị, giờ thì bắt đầu rip đĩa CD thật này.
