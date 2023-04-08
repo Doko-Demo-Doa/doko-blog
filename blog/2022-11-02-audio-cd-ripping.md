@@ -116,3 +116,30 @@ Logo AccurateRip góc dưới bên phải sẽ cho biết AccurateRip đã đư�
 - Click vào **Extraction Method** và click **Detect Read Features...**. Đút đĩa vào kiểm tra và xem kết quả.
 
 ![eac_drive_options_drive_feature_analyzing](/img/audio-cd-guide/eac_drive_options_drive_feature_analyzing.png) ![eac_drive_options_drive_feature_result](/img/audio-cd-guide/eac_drive_options_drive_feature_result.png)
+
+- Chọn **Secure mode with following drive features (recommended)**
+  - Tick vào "**Drive has ‘Accurate Stream’ feature**" (nếu nãy có test ra Yes)
+  - Check "**Drive caches audio data**" (nếu nãy có test ra Yes)
+  - Bỏ tick **Drive is compatible of retrieving C2 error information** (Kể cả có test ra Yes). Tính năng này phụ thuộc vào ổ đĩa có hỗ trợ hay không, và thường là không hoặc ổ đĩa đó không đáng tin cậy.
+
+![eac_drive_options_extraction_method](/img/audio-cd-guide/eac_drive_options_extraction_method.png)
+
+- Click vào tab Drive và click "**Autodetect read commands now**". Ô "**Drive read command**" sẽ được tự điền. 3 tùy chọn sau đó cứ để nguyên, trừ khi bạn có lý do đặc biệt nào đó.
+
+![eac_drive_options_drive](/img/audio-cd-guide/eac_drive_options_drive.png)
+
+- Click vào tab **Offset / Speed** và điền như sau:
+  - Bỏ tick **Overread intro Lead-In and Lead-Out** (mặc định), trừ khi bạn chắc là ổ đĩa có hỗ trợ.
+  - Tick vào **Allow speed reduction during extraction** (mặc định)
+  - Tick vào **Use AccurateRip with this drive** (mặc định)
+
+![eac_drive_options_offset_speed](/img/audio-cd-guide/eac_drive_options_offset_speed.png)
+
+- Click vào tab **Gap Detection** và điền như sau:
+
+  - **Gap/Index retrieval method**: "**Detection method A**" (Chọn B hoặc C nếu gặp vấn đề gì đó khi nhận diện khoảng lặng giữa các track).
+  - **Detection accuracy**: **Secure**
+
+![eac_drive_options_gap_detection](/img/audio-cd-guide/eac_drive_options_gap_detection.png)
+
+- Click "**OK**"
