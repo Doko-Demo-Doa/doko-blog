@@ -84,3 +84,35 @@ Logo AccurateRip góc dưới bên phải sẽ cho biết AccurateRip đã đư�
 - Click vào tab **Normalize** và bỏ tick "**Normalize**"
 
 ![eac_options_normalize](/img/audio-cd-guide/eac_options_normalize.png)
+
+- Click vào tab Filename và điền vào khuôn dạng tên mong muốn, sau đây là ví dụ gợi ý:
+  - Naming scheme: Điền dạng `%tracknr2% - %artist% - %title%`
+  - Tick vào ô "Use various artist naming scheme", điền `%tracknr2% - %artist% - %title%`
+
+(Cũng có thể sẽ có người thích bỏ `%artist%` ra khỏi các track không có nhiều tác giả, tùy họ).
+
+![eac_options_filename](/img/audio-cd-guide/eac_options_filename.png)
+
+- Click vào tab **Character replacements** để thay các kí tự mà hệ điều hành không cho phép bằng kí tự bạn mong muốn. Ở đây cũng không cần phải sửa gì.
+
+![eac_options_charracter_replacements](/img/audio-cd-guide/eac_options_charracter_replacements.png)
+
+- Click vào tab **Directories** và điền theo ý muốn, không thì để nguyên. Đây là nơi chỉ định đường dẫn các file kết quả xuất ra. If you want a fixed location for your rips, then select “Use this directory“, “Browse…” and select folder.
+
+![eac_options_directories](/img/audio-cd-guide/eac_options_directories.png)
+
+- Click **OK**
+
+### Drive Options
+
+- Mở Drive Optons bằng cách vào menu **EAC -> Drive Options...**
+
+![eac_eac_menu-1024x467](/img/audio-cd-guide/eac_eac_menu-1024x467.png)
+
+- Click OK ở bảng thông báo này:
+
+![eac_drive_options_important_information](/img/audio-cd-guide/eac_drive_options_important_information.png)
+
+- Click vào **Extraction Method** và click **Detect Read Features...**. Đút đĩa vào kiểm tra và xem kết quả.
+
+![eac_drive_options_drive_feature_analyzing](/img/audio-cd-guide/eac_drive_options_drive_feature_analyzing.png) ![eac_drive_options_drive_feature_result](/img/audio-cd-guide/eac_drive_options_drive_feature_result.png)
