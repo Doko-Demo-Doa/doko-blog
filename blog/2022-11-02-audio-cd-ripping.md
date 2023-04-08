@@ -4,7 +4,7 @@ author: Doko
 author_title: Administrator
 author_url: https://github.com/Doko-Demo-Doa
 author_image_url: /img/avatar_doraemon.jpg
-image: /img/yugioh/shooting-majestic-star-dragon.png
+image: /img/audio-cd-guide/eac_eac_menu.png
 tags: [software, vietnamese, guide]
 ---
 
