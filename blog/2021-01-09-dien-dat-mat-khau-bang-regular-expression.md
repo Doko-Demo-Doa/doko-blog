@@ -1,13 +1,9 @@
 ---
 title: Diễn đạt mật khẩu bằng Regular Expression
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: true
 tags: [vietnamese, programming, regular-expression]
 ---
-
 
 Ví dụ có một yêu cầu đặt ra như sau: Sử dụng regex (regular expression) để kiểm tra quy ước đặt tên:
 
@@ -19,7 +15,6 @@ Ví dụ có một yêu cầu đặt ra như sau: Sử dụng regex (regular exp
 Vậy làm sao để viết regex kiểm tra được hết?
 
 <!--truncate-->
-
 
 Để đáp ứng các yêu cầu trên, đoạn regex rất phức tạp nên dựa theo từng yêu cầu con, chúng ta có thể chia ra làm nhiều phần nhỏ để xử lý:
 

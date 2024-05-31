@@ -1,9 +1,6 @@
 ---
 title: Flutter Architecture với Provider và Provider Architecture MVVM (phần 1)
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 image: https://i.ibb.co/dfLcSvg/Untitled-1.jpg
 hide_table_of_contents: false
 tags: [vietnamese, flutter, provider]
@@ -24,12 +21,12 @@ Chúng ta sẽ xây dựng một app đơn giản: 2 màn hình:
 
 <!--truncate-->
 
-- Ở màn hình (1): Có 1 nút mà khi ở trạng thái *Unauthenticated* (tạm gọi là trạng thái A) thì sẽ điều hướng sang màn hình thứ (2).
+- Ở màn hình (1): Có 1 nút mà khi ở trạng thái _Unauthenticated_ (tạm gọi là trạng thái A) thì sẽ điều hướng sang màn hình thứ (2).
 - Ở màn hình thứ (2): Có 1 nút mà khi click vào, chúng ta sẽ giả lập thao tác login: Click vào, sau 2 giây thì trạng thái Unauthenticated sẽ chuyển sang Authenticated. Khi quay lại màn hình (1) thì cái nút ở màn (1) bấm vào chỉ còn print ra console chữ gì đó tuỳ.
 
 Bài viết mặc định hiểu là bạn đã từng làm việc với React / Redux nên sẽ có một số khái niệm đưa ra mang tính ánh xạ sang Redux.
 
-*Provider* ở đây không khác gì Provider component trong React Redux, và cũng hoạt động theo dạng bên cung (provider) và bên cầu (consumer). Do Dart là ngôn ngữ optional static typing nên tác giả của lib Provider có chia làm một số loại cho dễ dùng:
+_Provider_ ở đây không khác gì Provider component trong React Redux, và cũng hoạt động theo dạng bên cung (provider) và bên cầu (consumer). Do Dart là ngôn ngữ optional static typing nên tác giả của lib Provider có chia làm một số loại cho dễ dùng:
 
 ## Provider
 
@@ -38,7 +35,7 @@ Nhận một giá trị vào nhưng giá trị đó không được update cho b
 Ví dụ, lấy một `ViewModel` như sau:
 
 ```dart
-class MyModel { 
+class MyModel {
   String someValue = 'Hello';  void doSomething() {
     someValue = 'Goodbye';
     print(someValue);
@@ -242,7 +239,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
-    
+
   }
 }
 
@@ -322,7 +319,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
-    
+
   }
 }
 
@@ -356,8 +353,8 @@ Cái này gần giống `ChangeNotifierProvider` nhưng phức tạp hơn một 
 Nếu bạn có một class `ViewModel` với `ValueNotifier` như sau:
 
 ```dart
-class MyModel { 
-  ValueNotifier<String> someValue = ValueNotifier('Hello'); 
+class MyModel {
+  ValueNotifier<String> someValue = ValueNotifier('Hello');
   void doSomething() {
     someValue.value = 'Goodbye';
   }

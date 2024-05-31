@@ -1,9 +1,6 @@
 ---
 title: Message Queue với Bull (NodeJS + TypeScript)
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: false
 tags: [vietnamese, programming, nodejs, typescript, message-queue]
 ---
@@ -18,9 +15,9 @@ Message queue là giải pháp để giải quyết các vấn đề trong công
 
 Bull là thư viện có thể giúp cả 3 vấn đề trên, và bản thân cũng có 3 thành phần chính:
 
-- __Producer__: Thành phần tạo ra các công việc (job) và ném chúng vào queue (hàng đợi).
-- __Consumer__: Thành phần nhận việc từ queue.
-- __Listener__: Thành phần lắng nghe các sự kiện diễn ra trong hàng đợi (completed, failed, stalled).
+- **Producer**: Thành phần tạo ra các công việc (job) và ném chúng vào queue (hàng đợi).
+- **Consumer**: Thành phần nhận việc từ queue.
+- **Listener**: Thành phần lắng nghe các sự kiện diễn ra trong hàng đợi (completed, failed, stalled).
 
 <!--truncate-->
 
@@ -47,9 +44,9 @@ Vâng, trên đây chỉ là vài ví dụ về những thứ mà message queue 
 Cú pháp rất đơn giản như sau:
 
 ```ts
-import Queue from 'bull';
+import Queue from "bull";
 
-export const reminderQueue = new Queue('loi-chuc-moi-ngay');
+export const reminderQueue = new Queue("loi-chuc-moi-ngay");
 ```
 
 Và như vậy là xong, ta đã có một hàng đợi, luôn được chờ xử lý khi bắt đầu chạy `reminderQueue.process()` mà ta sẽ tìm hiểu ngay phía dưới.
@@ -57,12 +54,12 @@ Và như vậy là xong, ta đã có một hàng đợi, luôn được chờ x�
 Tô vẽ thêm một chút:
 
 ```ts
-export const reminderQueue = new Queue('loi-chuc-moi-ngay', {
-    limiter: {
-      max: 1000,
-      duration: 60000,
-    },
-  });
+export const reminderQueue = new Queue("loi-chuc-moi-ngay", {
+  limiter: {
+    max: 1000,
+    duration: 60000,
+  },
+});
 ```
 
 để đảm bảo rằng trong 1 phút (60.000 miligiây) không có quá 1.000 tác vụ được xử lý, tránh quá tải server.
@@ -75,10 +72,10 @@ Vậy ta có 1 job dạng như sau:
 
 ```ts
 reminderQueue.add(
-  'REMINDER_JOB_NAME',
+  "REMINDER_JOB_NAME",
   {
     user_id: userId,
-    message: 'Message',
+    message: "Message",
   },
   {
     attempts: 2,

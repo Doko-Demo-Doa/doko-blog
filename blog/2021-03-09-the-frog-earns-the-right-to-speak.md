@@ -13,8 +13,6 @@ Ngày xửa ngày xưa, sâu thẳm trong một khu rừng già. Có một con �
 
 Mọi người trong khu rừng đều có thể nghe thấy tiếng ộp oạp của nó, và điều đó khiến họ vui. Do khu rừng rất dễ đi lạc, nên nhờ tiếng của con ếch mà họ có thể tìm được đường quay lại cái ao đó khá dễ dàng. Cũng có thể điều đó sẽ không còn đúng nữa nếu con ếch tiếp tục oàm oạp vào ban đêm, nhưng nó cũng đã quá lười và mệt mỏi khi màn đêm buông xuống mất rồi.
 
-<!--truncate-->
-
 Một ngày nọ, có một người lần đầu tiên đặt chân tới khu rừng. Một cô gái trẻ trong chiếc áo choàng lộng lẫy. Cô đi nhanh qua khu rừng, như thể đang chạy trốn điều gì đó, và không hề ngoảnh đầu lại. Rất nhiều con mắt đổ dồn về phía nàng Công chúa, nhưng không ai dám ngỏ lời giúp đỡ, mặc cho gã Thợ Săn Điên đang truy đuổi nàng.
 
 "Đây không phải phận sự của chúng ta", chúng nghĩ, "ta nên ngó lơ đi thì hơn". Trong khi tên Thợ Săn Điên, một kẻ không màng gì khác ngoài việc săn lùng con mồi để lãnh thưởng và kiếm tìm danh vọng, vẫn không chịu dừng bước. Không gì có thể thoát được đôi mắt sắc bén của hắn.
@@ -23,19 +21,19 @@ Nàng công chúa đi một mình, không ai giúp, cho đến khi lạc trong k
 
 "Hãy giúp tôi", nàng nói. "Tôi cần một nơi để nghỉ và ẩn náu".
 
-"<Ộp oạp>" - con ếch trả lời.
+"Ộp oạp" - con ếch trả lời.
 
 "Xin đừng kêu nữa. Thợ Săn Điên đang truy đuổi tôi".
 
-"<ỘP OẠP>" - con ếch đáp lại, to đến mức công chúa phải lấy tay che tai.
+"ỘP OẠP" - con ếch đáp lại, to đến mức công chúa phải lấy tay che tai.
 
 Và rồi con ếch nhảy loạn xạ đủ hướng. "Bạn đang làm gì vậy?" - công chúa hỏi, "Đừng kêu nữa nếu không hắn sẽ tìm ra đấy!".
 
 Nhưng con ếch vẫn vừa kêu vừa nhảy liên hồi xung quanh công chúa. Lên lên xuống xuống. Trái trái phải phải.
 
-"<Ộp oạp!>"
+"Ộp oạp"
 
-"<Ộp oạp!>"
+"Ộp oạp"
 
 Cho tới khi nàng công chúa chợt hiểu ra ý đồ của con ếch. Thận trọng từng bước, nàng leo lên lưng con thú to lớn. Và rồi chỉ một bước nhảy, con ếch đã ra khỏi cái ao. Con ếch nhảy rất nhanh và xa, đến cả gã thợ săn cũng không thể tìm thấy công chúa nữa. Chỉ với vài bước nhảy, công chúa đã thoát khỏi tầm mắt của tên thợ săn, sau đó mất hút hoàn toàn. Nàng công chúa nhắm mắt lại, phó mặc cho con ếch đưa mình đến bất kì nơi đâu mà nó muốn.
 

@@ -1,9 +1,6 @@
 ---
 title: Synchron combo - Yu-Gi-Oh Master Duel
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 image: /img/yugioh/shooting-majestic-star-dragon.png
 tags: [gaming, english, yugioh, synchron]
 ---

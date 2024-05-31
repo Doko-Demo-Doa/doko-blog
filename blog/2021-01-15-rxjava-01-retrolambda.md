@@ -1,9 +1,6 @@
 ---
 title: RxJava Legacy (01) - Retro Lambda
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: false
 tags: [vietnamese, programming, java, rxjava]
 ---

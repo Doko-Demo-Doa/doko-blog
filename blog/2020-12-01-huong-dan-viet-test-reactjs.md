@@ -1,10 +1,6 @@
 ---
 title: Hướng dẫn viết test ReactJS cho người mới bắt đầu
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
-image: https://i.ibb.co/qR1jHkW/react-testing-library.png
+authors: [doko]
 tags: [vietnamese, programming, reactjs]
 ---
 
@@ -45,7 +41,6 @@ Do đây là một bài viết khá dài, tôi sẽ đặt mục lục ở đầ
 
 Trước khi vào cụ thể, chúng ta hãy có cái nhìn tổng thể về việc test app React nói chung.
 
- 
 ## Sơ lược
 
 Khi làm việc với một ứng dụng lớn, phức tạp, việc động chạm đến các phần code có thể sẽ gây hậu quá khá khó lường nếu không cẩn thận. Thậm chí chỉ cần đổi dấu chấm dấu phẩy thôi cũng có thể khiến ứng dụng đổ vỡ. Để tránh và giảm thiểu điều này, các lập trình viên viết test.
@@ -58,7 +53,6 @@ Về React nói riêng, khi nhắc đến test là không thể không nhắc đ
 
 Cụ thể, hãy tưởng tượng trên trang web có một cái nút. Với Testing Library bạn sẽ không viết test kiểu "test xem prop onClick được truyền vào có được gọi ra không khi nút được click", mà ta test trường hợp "việc click vào cái nút đó có làm thay đổi hay kích hoạt điều gì không (như mở một cái modal chẳng hạn)".
 
- 
 ## Tạo ứng dụng để test
 
 <img class="center" src="https://i.ibb.co/k3cNwmk/react-testing-intro-2.gif" alt="reddit" />
@@ -73,15 +67,13 @@ Sau khi điền tên, app sẽ call API để lấy số lượng top post trên
 
 Repo code đầy đủ nằm ở <a href="https://git.acaziasoft.com/acazia/beginners-guide-to-testing-react">đây</a>. Các bạn có thể clone về để xem cùng bài hướng dẫn này.
 
- 
- 
 <h2 id="what-should-we-test">Chúng ta nên test gì?</h2>
 
 Câu hỏi đầu tiên đặt ra là: Cái gì phải test ở đây? Thử lấy cái form làm ví dụ, code sẽ có dạng như này:
 
 ```jsx
 function Form({ onSearch }) {
-  const [subreddit, setSubreddit] = useState('javascript');
+  const [subreddit, setSubreddit] = useState("javascript");
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -100,9 +92,7 @@ function Form({ onSearch }) {
         />
       </Label>
 
-      <Button type="submit">
-        Search
-      </Button>
+      <Button type="submit">Search</Button>
     </FormContainer>
   );
 }
@@ -115,41 +105,29 @@ Có thể bạn sẽ muốn biết data được lấy ra sao. Vậy soi trong c
 ```jsx
 function Home() {
   const [posts, setPosts] = useState([]);
-  const [status, setStatus] = useState('idle')
+  const [status, setStatus] = useState("idle");
 
   const onSearch = async (subreddit) => {
-    setStatus('loading');
+    setStatus("loading");
     const url = `https://www.reddit.com/r/${subreddit}/top.json`;
     const response = await fetch(url);
     const { data } = await response.json();
     setPosts(data.children);
-    setStatus('resolved');
+    setStatus("resolved");
   };
 
   return (
     <Container>
       <Section>
-        <Headline>
-          Find the best time for a subreddit
-        </Headline>
+        <Headline>Find the best time for a subreddit</Headline>
 
         <Form onSearch={onSearch} />
       </Section>
 
-      {
-        status === 'loading' && (
-          <Status>
-            Is loading
-          </Status>
-        )
-      }
-      {
-        status === 'resolved' && (
-          <TopPosts>
-            Number of top posts: {posts.length}
-          </TopPosts>
-        )
-      }
+      {status === "loading" && <Status>Is loading</Status>}
+      {status === "resolved" && (
+        <TopPosts>Number of top posts: {posts.length}</TopPosts>
+      )}
     </Container>
   );
 }
@@ -167,7 +145,7 @@ Tuy nhiên với **Testing Library**, chúng ta không thể truy cập vào sta
 
 Lúc này chúng ta tạm thời đứng dậy, pha tách cafe, và quay lại...
 
-*Xong chưa?*
+_Xong chưa?_
 
 OK, bạn đã từng đọc Doraemon chưa? Hẳn là rồi. Và bạn có để ý rằng: Trong hầu hết các câu chuyện, tác giả không giải thích về cấu tạo, thành phần của các bảo bối, mà tập trung vào việc "các bảo bối của Doraemon được sử dụng như thế nào, có tác dụng gì". Nobita không cần biết bảo bối đó cấu thành ra sao, chỉ cần biết mang đi mà vọc phá.
 
@@ -176,6 +154,7 @@ OK, bạn đã từng đọc Doraemon chưa? Hẳn là rồi. Và bạn có đ�
 Thay vì tập trung vào code và cách nó hoạt động, chúng ta thử đứng từ vị trí của người dùng. Điều này sẽ buộc chúng ta phải test vào những phần quan trọng của ứng dụng.
 
 Khi bạn đã hiểu được "tư tưởng" của <em>Testing Library</em>, việc test không còn bí ấn hay đáng sợ nữa.
+
 <blockquote>Ghi chú: Một người dùng ở đây có thể là người dùng cuối, hoặc cũng có thể là một developer khác đang dùng component mà bạn đã viết. Ví dụ như khi bạn viết một component hiện ảnh dạng gallery cho một dev cùng team. Cái ta cần test là gallery đã viết ra hoạt động đúng khi prop hay đổi chẳng hạn.</blockquote>
 
 OK, ừ thì từ phía người dùng. Tạm thời chúng ta hãy quên đi các kiến thức về component mà thử ngó sang từ vị trí người dùng xem sao. Và từ phía người dùng, cái gì là quan trọng?
@@ -190,8 +169,6 @@ Dễ thấy: Người dùng không cần quan tâm Form có lưu dữ liệu kh�
 
 Và tất nhiên là chúng ta cần test cả phần header. Vì header có chứa link, mà link hỏng thì thành thảm hoạ.
 
- 
- 
 <h2 id="writing-the-test">Viết test</h2>
 
 Giờ chúng ta sẽ duyệt lại phần trước và nhìn nhận vấn đề từ phía kĩ thuật xem sao:
@@ -200,22 +177,17 @@ Ta sẽ viết 2 phần test: Một cho link ở header và một cho phần for
 
 Nào, bắt đầu với phần header trước. Đầu tiên ta mở file <code>src/App.test.js</code> và bỏ phần code test cũ đi. Sau đó ta viết định nghĩa cho phần test bằng hàm <code>describe(...)</code> của Jest.
 
-
 <blockquote>Ghi chú: Việc đóng code test vào <code>describe</code> không bắt buộc, nhưng nhờ nó chúng ta sẽ có thể nhóm các phần test lại khi chạy, và gộp lại cho dễ nhìn trong editor.</blockquote>
 
 ```jsx
-describe('Header', () => {
-
-});
+describe("Header", () => {});
 ```
 
 Test case được khai báo bằng từ <code>test(...)</code> hoặc <code>it(...)</code>. Cả 2 cái này đều có trong Jest.
 
 ```jsx
-describe('Header', () => {
-  test('"How it works" link points to the correct page', () => {
-
-  });
+describe("Header", () => {
+  test('"How it works" link points to the correct page', () => {});
 });
 ```
 
@@ -224,11 +196,11 @@ Chúng ta sẽ không test cái component Header riêng lẻ mà sẽ đưa nó 
 Đại khái là cái <code>App.tsx</code> trông như này:
 
 ```jsx
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import GlobalStyle from './GlobalStyle';
-import Header from './components/Header';
-import Home from './pages/Home';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import GlobalStyle from "./GlobalStyle";
+import Header from "./components/Header";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -261,10 +233,10 @@ App component trên dùng React Router như một ứng dụng đưa vào produc
 Do đó trong bước đầu tiên, ta sẽ render App component. <em>Testing Library</em> có cung cấp sẵn cho ta một hàm <code>render</code> để tạo ra DOM cho một component đã cho trước.
 
 ```jsx
-import { render } from '@testing-library/react';
-import App from './App';
+import { render } from "@testing-library/react";
+import App from "./App";
 
-describe('Header', () => {
+describe("Header", () => {
   test('"How it works" link points to the correct page', () => {
     render(
       <MemoryRouter>
@@ -277,7 +249,6 @@ describe('Header', () => {
 
 Vì app của chúng ta tạo từ <code>create-react-app</code>, mọi thứ cần và đủ cho <em>Testing Library</em> cũng đã đều được cài và thiết lập ổn từ đầu.
 
- 
 <h2 id="dont-take-a-stab-in-the-dark">Đừng làm mò!</h2>
 
 Có thể ngay lúc này bạn đang thử tự mò mò viết một vài test khác, nhưng bạn có cảm thấy mình đang mất phương hướng? Bạn không biết điều gì đang xảy ra. Trước đây đang làm việc bình thường trên trình duyệt với Chrome Dev Tools ngon lành và đã quen rồi.
@@ -291,9 +262,9 @@ Do mới bắt đầu tập viết test, đừng nên dựa vào kiểu viết "
 Nói đi nói lại là cuối cùng chúng ta nên dùng hàm <code>debug</code>:
 
 ```jsx
-import { render, screen } from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
 
-describe('Header', () => {
+describe("Header", () => {
   test('"How it works" link points to the correct page', () => {
     render(
       <MemoryRouter>
@@ -311,15 +282,13 @@ Chạy test bằng lệnh npm run test hoặc yarn test, chúng ta sẽ thấy:
 
 OK, dễ thấy là header đang chứa vài link trong đó, bao gồm cả phần "How it works". Giờ chung ta sẽ tìm hiểu cách để <em>truy nhập</em> và <em>tương tác</em> với nó.
 
- 
- 
 <h2 id="how-to-access-dom-tree">Làm sao để truy cập DOM tree</h2>
 
 Cách ngon nhất vẫn là thông qua object screen, đi kèm với Testing Library. Object này có chứa những phương thức để truy vấn vào DOM.
 
-- <strong>getBy*</strong> như <code>getByTestId</code>, <code>getByText</code>, hay <code>getByRole</code>. Những hàm này đều là các hàm đồng bộ (synchronous) và dùng để kiểm tra xem element đang có trong DOM hay không, nếu không thì bắn ra lỗi.
+- <strong>getBy\*</strong> như <code>getByTestId</code>, <code>getByText</code>, hay <code>getByRole</code>. Những hàm này đều là các hàm đồng bộ (synchronous) và dùng để kiểm tra xem element đang có trong DOM hay không, nếu không thì bắn ra lỗi.
 
-- <strong>findBy*</strong> như <code>findByText</code>: Các hàm này là các hàm bất đồng bộ. Chúng sẽ đợi một khoảng thời gian (mặc định là 5s) cho đến khi element xuất hiện trong DOM, nếu không thì bắn ra lỗi.
+- <strong>findBy\*</strong> như <code>findByText</code>: Các hàm này là các hàm bất đồng bộ. Chúng sẽ đợi một khoảng thời gian (mặc định là 5s) cho đến khi element xuất hiện trong DOM, nếu không thì bắn ra lỗi.
 
 - <strong>queryBy</strong>: Cũng giống getBy nhưng khi không tìm thấy thì không bắn ra lỗi, mà chỉ trả về null.
 
@@ -328,9 +297,7 @@ Như có thể thấy, ta đã có ngay cơ số lựa chọn, mà trên đây m
 Thoạt nhìn thì có vẻ <code>getByTestId</code> là chuẩn bài. Chúng ta chỉ cần thêm test id vào element như sau:
 
 ```jsx
-<div data-testid="some-content">
-  Some content
-</div>
+<div data-testid="some-content">Some content</div>
 ```
 
 Bây giờ chúng ta có thể truy cập vào cái div kia bằng hàm <code>getByTestId('some-content')</code>. Rất đơn giản, phải không?
@@ -350,7 +317,7 @@ render(
   </MemoryRouter>
 );
 
-const link = screen.getByRole('link', { name: /how it works/i })
+const link = screen.getByRole("link", { name: /how it works/i });
 ```
 
 Ở đây chúng ta dùng dạng biểu thức chính quy (regular expression): <code>/how it works/</code> thay vì viết dạng string kiểu <code>'How it works'</code>. Cách này sẽ giúp ta tránh được vấn đề về chữ hoa chữ thường (có thể bị gây ra sau khi áp CSS vào). Ngoài ra chúng ta cũng có thể lấy một phần string. <code>/how it/i</code> sẽ pass test, còn <code>'How it'</code> thì không.
@@ -361,7 +328,6 @@ Vì mới bắt đầu, tại sao ta không thử kiểm tra lại một lần n
 
 <img src="https://i.ibb.co/17KvVTP/image.png" alt="" />
 
- 
 <h2 id="interacting-with-dom-elements">Tương tác với các phần tử trong DOM</h2>
 
 Đến giờ phút này thì chúng ta đã biết cách truy cập vào DOM element, cụ thể là cái link "How it works" kia, nhưng chưa đủ. Có nhớ chúng ta cần test gì không?
@@ -378,25 +344,24 @@ Lời khuyên là dùng cái thứ 2 vì có nhiều loại event hơn (ví dụ
 Giờ chúng ta sẽ sửa code để cho nó "click" vào cái link:
 
 ```jsx
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import App from "./App";
 
-describe('Header', () => {
+describe("Header", () => {
   test('"How it works" link points to the correct page', () => {
     render(
       <MemoryRouter>
         <App />
       </MemoryRouter>
     );
-    const link = screen.getByRole('link', { name: /how it works/i });
+    const link = screen.getByRole("link", { name: /how it works/i });
     userEvent.click(link);
   });
 });
 ```
 
- 
 <h2 id="test-if-the-correct-page-was-rendered">Test xem trang muốn test có được render đúng chưa</h2>
 
 Một trong những cách để test là kiểm tra url. Cách này khả thi nhưng thực tế là người dùng đâu có quan tâm đến url, hoặc có những lúc url đúng nhưng lại trỏ đến trang 404.
@@ -412,17 +377,16 @@ Nếu trên headline có Aria role, chúng ta có thể dùng lại <strong>getB
 ```jsx
 userEvent.click(link);
 
-screen.getByRole('heading', { name: /how it works/i });
+screen.getByRole("heading", { name: /how it works/i });
 ```
 
 Test đã pass. Chứng tỏ có headline mong muốn trong trang, và có nghĩa là chúng ta đang ở đúng trang mong muốn.
 
 :::note
 
-*Lưu ý*: Chúng ta không nên dùng `getBy*` để kiểm định (assert) element xem đã được render ra chưa. Thay vào đó ta dùng `expect(...).toBeInDocument()`:
+_Lưu ý_: Chúng ta không nên dùng `getBy*` để kiểm định (assert) element xem đã được render ra chưa. Thay vào đó ta dùng `expect(...).toBeInDocument()`:
 
 :::
-
 
 Dưới đây là code mô tả đầy đủ:
 
@@ -434,11 +398,11 @@ test('"How it works" link points to the correct page', () => {
     </MemoryRouter>
   );
 
-  const link = screen.getByRole('link', { name: /how it works/i });
+  const link = screen.getByRole("link", { name: /how it works/i });
   userEvent.click(link);
 
   expect(
-    screen.getByRole('heading', { name: /how it works/i })
+    screen.getByRole("heading", { name: /how it works/i })
   ).toBeInTheDocument();
 });
 ```
@@ -449,14 +413,12 @@ Trước khi tiếp tục test với form, điểm lại một chút. Hiện ta 
 
 Các bạn có thể coi 2 cái link trên như bài tập để viết tiếp phần test. Gợi ý:
 
-- Phần link bao quanh logo có thể được test bằng <code>getByRole('link', { name })</code>.
+- Phần link bao quanh logo có thể được test bằng `getByRole('link', { name })`.
 
-- Nếu bạn không biết nên dùng gì thì hãy lấy <code>screen.debug()</code> để kiểm tra đầu ra.
+- Nếu bạn không biết nên dùng gì thì hãy lấy `screen.debug()` để kiểm tra đầu ra.
 
 - Phần test cho "How it works" và "About" có thể được kết hợp bằng hàm <code>test.each</code>.
 
- 
- 
 <h2 id="testing-the-form">Test form</h2>
 
 Chúng ta đã test xong link trên header. Mọi thứ đang bắt đầu phức tạp hơn, và đối tượng tiếp theo là cái form nhập text. Nếu bạn đã quên thì trông nó như này:
@@ -465,17 +427,15 @@ Chúng ta đã test xong link trên header. Mọi thứ đang bắt đầu phứ
 
 Như đã nói ở trên, chúng ta sẽ cần test các trường hợp:
 
-
 <ul>1. Người dùng nhập liệu vào ô và ấn Submit.</ul>
 <ul>2. App cho hiện lên loading trong khi chờ data.</ul>
 <ul>3. Khi data về thì đưa lên hiển thị.</ul>
 
-
 Và chúng ta có thể tiếp tục làm giống như cách mà ta đã làm với header:
 
 ```jsx
-describe('Subreddit form', () => {
-  test('loads posts that are rendered on the page', () => {
+describe("Subreddit form", () => {
+  test("loads posts that are rendered on the page", () => {
     render(
       <MemoryRouter>
         <App />
@@ -509,8 +469,6 @@ describe('Subreddit form', () => {
 
 Giờ thì chúng ta chỉ cần gọi hàm setup ở đầu mỗi ca test là xong.
 
- 
- 
 <h2 id="changing-and-submitting-form">Thay đổi dữ liệu và submit form</h2>
 
 Bước đầu tiên trong 3 bước mô tả ở trên là "Người dùng nhập liệu vào ô và ấn Submit."
@@ -526,17 +484,17 @@ Dễ thấy là label cho ô input tên của subreddit bắt đầu với <code
 ```jsx
 setup();
 
-const subredditInput = screen.getByLabelText('r /');
-userEvent.type(subredditInput, 'reactjs');
+const subredditInput = screen.getByLabelText("r /");
+userEvent.type(subredditInput, "reactjs");
 ```
 
 Tiếp đến, chúng ta cần submit cái form. Trong cái log in ra từ screen.debug() các bạn có thể thấy là form có render ra một button. Và thế là lại có chỗ để dùng <strong>getByRole</strong>.
 
 ```jsx
-const subredditInput = screen.getByLabelText('r /');
-userEvent.type(subredditInput, 'reactjs');
+const subredditInput = screen.getByLabelText("r /");
+userEvent.type(subredditInput, "reactjs");
 
-const submitButton = screen.getByRole('button', { name: /search/i });
+const submitButton = screen.getByRole("button", { name: /search/i });
 userEvent.click(submitButton);
 
 screen.debug();
@@ -550,8 +508,6 @@ Ta sẽ đặt thêm một hàm debug nữa ở phía dưới để xem trạng 
 
 <img src="https://i.ibb.co/nj4wWzz/react-testing-intro-form-1.gif" alt="" />
 
- 
- 
 <h2 id="access-element-without-aria-role">Truy cập phần tử không có ARIA role</h2>
 
 Bước thứ 2 là: App cho hiện lên loading trong khi chờ data.
@@ -568,29 +524,26 @@ Và phần test sẽ pass.
 
 Giờ là lúc chúng ta duyệt phần cuối cùng: Khi data về thì đưa lên hiển thị.
 
-
- 
- 
 <h2 id="waiting-for-data">Chờ data bắn về</h2>
 
 Tính đến thời điểm này, khi click vào nút, chữ loading hiện ra. Có nghĩa là request API đã được gửi đi nhưng chưa được xử lý xong. Để test xem data đã được đưa lên đúng chưa, chúng ta sẽ phải đợi.
 
-Và cũng đến thời điểm này, chúng ta mới đùng đến các query <strong>getBy*</strong> và chúng đều là các hàm đồng bộ. Các hàm đó đều tham chiếu vào trạng thái hiện có của ứng dụng. Nếu element mong muốn không tồn tại, tất nhiên là sẽ fail.
+Và cũng đến thời điểm này, chúng ta mới đùng đến các query <strong>getBy\*</strong> và chúng đều là các hàm đồng bộ. Các hàm đó đều tham chiếu vào trạng thái hiện có của ứng dụng. Nếu element mong muốn không tồn tại, tất nhiên là sẽ fail.
 
-Bây giờ là lúc chúng ta cần đến loại query thứ hai: <strong>findBy*</strong>, nó sẽ đợi 5 giây cho đến khi element xuất hiện.
+Bây giờ là lúc chúng ta cần đến loại query thứ hai: <strong>findBy\*</strong>, nó sẽ đợi 5 giây cho đến khi element xuất hiện.
 
 Và trước khi tiếp tục, ta cần tìm một cách nào đó để định danh cho element. Như đã biết, app sẽ hiển thị số lượng top post ở dưới ô nhập text khi request thành công. Dòng chữ hiện lên sẽ là: "Number of top posts: ...", nên ta sẽ dùng <code>findByText</code>.
 
 Vì không biết con số được render ra sẽ là bao nhiêu, nên việc dùng regular expression có vẻ ngon hơn. Vì regular expression cho phép ta tìm element với một phần string nào đó.
 
 ```jsx
-test('loads posts and renders them on the page', async () => {
+test("loads posts and renders them on the page", async () => {
   setup();
 
-  const subredditInput = screen.getByLabelText('r /');
-  userEvent.type(subredditInput, 'reactjs');
+  const subredditInput = screen.getByLabelText("r /");
+  userEvent.type(subredditInput, "reactjs");
 
-  const submitButton = screen.getByRole('button', { name: /search/i });
+  const submitButton = screen.getByRole("button", { name: /search/i });
   userEvent.click(submitButton);
 
   const loadingMessage = screen.getByText(/is loading/i);
@@ -615,8 +568,6 @@ Ngon! Data trả về đã được render ra. Chúng ta đã xong hết 3 bư�
 
 Vậy là xong đúng không? Chưa, còn một thứ nữa...
 
- 
- 
 <h2 id="mock-api">Mock API</h2>
 
 Lúc này có thể bạn đã nhận ra việc test cái form kia tốn kha khá thời gian, mất khoảng gần 1s, có thể lâu hơn nếu server chậm. Vì chúng ta đang gửi request thật đến reddit api.
@@ -646,7 +597,7 @@ function Home() {
     setPosts(data.children);
     setStatus('resolved');
   };
-  
+
   ...
 ```
 
@@ -655,7 +606,6 @@ function Home() {
 ```bash
 yarn add jest-fetch-mock --dev
 ```
-
 
 Giờ thì chúng ta cần khai báo <code>jest-fetch-mock</code> ở đầu của file test.
 
@@ -667,16 +617,15 @@ Nếu chạy thử lúc này thì test sẽ fail. Vì chúng ta chưa chỉ cho 
 
 <img src="https://i.ibb.co/php4VBQ/6-copy-response.png" alt="" />
 
-Tiếp đến, chúng ta cho cái response đó vào một file, ví dụ <code>src/__mocks__/subreddit-reactjs-response.json</code>.
+Tiếp đến, chúng ta cho cái response đó vào một file, ví dụ <code>src/**mocks**/subreddit-reactjs-response.json</code>.
 
 Và nhờ thư viện <code>jest-fetch-mock</code>, chúng ta chỉ cần gọi <code>fetch.once</code> để định nghĩa mock response.
 
 ```jsx
-import fetchMock from 'jest-fetch-mock';
+import fetchMock from "jest-fetch-mock";
 
 fetchMock.enableMocks();
 ```
-
 
 Giờ thì test pass chặt. Vì ta đang sử dụng mock response mà ta có thể điều khiển được. Do ta có thể chắc rằng số lượng bài post trả về là 25 nên ta có thể chỉnh sửa assert một chút như sau:
 
@@ -697,7 +646,6 @@ Khi ứng dụng cần gửi nhiều API request, cách mock kiểu này sẽ g�
 
 :::
 
-
 <h2 id="test-mock-functions">Test các hàm mock</h2>
 
 Đây mới là bước cuối cùng, chúng ta sẽ cần test xem endpoint API đã được gọi chuẩn chưa. Bằng cách này ta có thể chắc rằng user đang thấy được data đúng.
@@ -705,30 +653,33 @@ Khi ứng dụng cần gửi nhiều API request, cách mock kiểu này sẽ g�
 Do đang sử dụng <code>jest-mock-fetch</code>, hàm fetch đã được thay bằng function mock. Nhờ đó mà ta có thể dùng <code>toHaveBeenCalledWith</code> để kiểm tra URL đúng đã được gọi ra hay chưa.
 
 ```jsx
-expect(fetch).toHaveBeenCalledWith('https://www.reddit.com/r/reactjs/top.json');
+expect(fetch).toHaveBeenCalledWith("https://www.reddit.com/r/reactjs/top.json");
 ```
-
 
 <blockquote>Ghi chú: Trong thời gian làm việc với testing, có thể bạn sẽ cần mock các hàm với nhiều công dụng khác nhau. Với jest bạn có thể sử dụng luôn <code>jest.fn()</code>, bản thân <code>jest-mock-fetch</code> cũng dùng nó đấy!</blockquote>
 
 Xong! Phần test đầy đủ cho cái form sẽ như sau:
 
-```jsx
-describe('Subreddit form', () => {
-  test('loads posts and renders them on the page', async () => {
+```tsx
+describe("Subreddit form", () => {
+  test("loads posts and renders them on the page", async () => {
     fetch.once(JSON.stringify(mockResponse));
     setup();
 
-    const subredditInput = screen.getByLabelText('r /');
-    userEvent.type(subredditInput, 'reactjs');
+    const subredditInput = screen.getByLabelText("r /");
+    userEvent.type(subredditInput, "reactjs");
 
-    const submitButton = screen.getByRole('button', { name: /search/i });
+    const submitButton = screen.getByRole("button", { name: /search/i });
     userEvent.click(submitButton);
 
     expect(screen.getByText(/is loading/i)).toBeInTheDocument();
 
-    expect(await screen.findByText(/Number of top posts: 25/i)).toBeInTheDocument();
-    expect(fetch).toHaveBeenCalledWith('https://www.reddit.com/r/reactjs/top.json');
+    expect(
+      await screen.findByText(/Number of top posts: 25/i)
+    ).toBeInTheDocument();
+    expect(fetch).toHaveBeenCalledWith(
+      "https://www.reddit.com/r/reactjs/top.json"
+    );
   });
 });
 ```

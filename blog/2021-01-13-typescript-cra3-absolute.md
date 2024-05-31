@@ -1,9 +1,6 @@
 ---
 title: TypeScript + CRA 3 + Absolute Import + Electron
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 image: https://i.ibb.co/48cpLdp/react-electron.png
 hide_table_of_contents: false
 tags: [vietnamese, programming, reactjs, javascript, typescript, cra, electron]
@@ -11,7 +8,7 @@ tags: [vietnamese, programming, reactjs, javascript, typescript, cra, electron]
 
 :::info
 
-*Lưu ý*: Ở thời điểm hiện tại, CRA 3.0 đã hỗ trợ absolute import. Ta không cần phải dùng đến craco để import mà có thể dựa vào `src/` làm alias gốc.
+_Lưu ý_: Ở thời điểm hiện tại, CRA 3.0 đã hỗ trợ absolute import. Ta không cần phải dùng đến craco để import mà có thể dựa vào `src/` làm alias gốc.
 
 :::
 
@@ -24,13 +21,13 @@ Tuy nhiên...
 Một trong những tính thiếu của CRA là hỗ trợ absolute import với custom alias (thường là dạng `~/` hoặc `@/`). Tức là thay vì import kiểu:
 
 ```js
-import MyComponent from '../../../my-component'
+import MyComponent from "../../../my-component";
 ```
 
 thì ta chỉ cần:
 
 ```js
-import MyComponent from '~/components/my-component'
+import MyComponent from "~/components/my-component";
 ```
 
 Tuy nhiên, cũng một phần do sử dụng Babel để transpile code, tính năng absolute import của CRA khá hạn chế và có một số quy định bắt buộc bạn phải theo. Ví dụ như khi chạy dev hoặc build, 2 trường `paths` và `baseUrl` bị loại bỏ khỏi `tsconfig.json`. Nghĩa là nếu muốn custom đường dẫn import, chỉ còn cách duy nhất là eject ra.
@@ -60,7 +57,7 @@ Sau khi cài xong, tạo một file có tên `craco.config.js`, ta sẽ dùng đ
 ```js title="craco.config.js"
 module.exports = {
   // ...
-}
+};
 ```
 
 Sau đó đổi file `package.json` thành:
@@ -89,8 +86,8 @@ Ta có thể đặt tên file này tùy thích, do CRA luôn ghi đè file `tsco
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "~/*": ["./src/*"],
-    },
+      "~/*": ["./src/*"]
+    }
   }
 }
 ```
@@ -118,37 +115,35 @@ Ta sẽ chọn cách thứ 2, vì đơn giản là không cần cài thêm gì c
 Mở file `craco.config.js` và sửa lại như sau:
 
 ```js title="craco.config.js"
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   webpack: {
     alias: {
-      '~': path.resolve(__dirname, 'src/')
+      "~": path.resolve(__dirname, "src/"),
     },
   },
 };
-
 ```
 
 Vậy là ta import được theo kiểu:
 
 ```js
-import { auth } from '~/redux/features/auth/auth-slice';
+import { auth } from "~/redux/features/auth/auth-slice";
 ```
 
 Nếu muốn chỉ định chỉ 1 số thư mục thì ta có thể làm dạng:
 
 ```js title="craco.config.js"
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   webpack: {
     alias: {
-      '~/components': path.resolve(__dirname, 'src/components')
+      "~/components": path.resolve(__dirname, "src/components"),
     },
   },
 };
-
 ```
 
 Restart lại server, và lúc này absolute import đã có thể dùng được.
@@ -170,23 +165,22 @@ Nếu sử dụng Jest để viết test, ta cần viết thêm một chút đ�
 File đầy đủ sẽ có dạng:
 
 ```js title="craco.config.js"
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   webpack: {
     alias: {
-      '~': path.resolve(__dirname, 'src/')
+      "~": path.resolve(__dirname, "src/"),
     },
   },
   jest: {
     configure: {
       moduleNameMapper: {
-        '^~(.*)$': '<rootDir>/src$1'
+        "^~(.*)$": "<rootDir>/src$1",
       },
     },
   },
 };
-
 ```
 
 ## Tích hợp Electron
@@ -241,7 +235,7 @@ Tiếp theo, ta bố sung thêm 1 số lệnh vào phần `scripts` của `packa
     "electron:build": "npm run build && tsc -p electron && electron-builder",
     "electron:build-win": "npm run build && tsc -p electron && electron-builder -w",
     "electron:package": "cross-env NODE_ENV=production tsc -p electron && electron-builder"
-  },
+  }
 }
 ```
 
@@ -261,10 +255,12 @@ Thêm phần sau vào file `tsconfig.json`:
 Tạo một thư mục cùng cấp với `src`, đặt tên là `electron`, bên trong là file `main.ts` như sau:
 
 ```ts title="electron/main.ts"
-import { app, BrowserWindow } from 'electron';
-import path from 'path';
-import isDev from 'electron-is-dev';
-import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+import { app, BrowserWindow } from "electron";
+import path from "path";
+import isDev from "electron-is-dev";
+import installExtension, {
+  REACT_DEVELOPER_TOOLS,
+} from "electron-devtools-installer";
 
 let win: BrowserWindow | null = null;
 
@@ -284,13 +280,13 @@ function createWindow() {
   });
 
   if (isDev) {
-    win.loadURL('http://localhost:3000/');
+    win.loadURL("http://localhost:3000/");
   } else {
     // 'build/index.html'
     win.loadURL(`file://${__dirname}/../index.html`);
   }
 
-  win.on('closed', () => {
+  win.on("closed", () => {
     win = null;
   });
 
@@ -298,35 +294,42 @@ function createWindow() {
   if (isDev) {
     // 'node_modules/.bin/electronPath'
     // eslint-disable-next-line global-require
-    require('electron-reload')(__dirname, {
-      electron: path.join(__dirname, '..', '..', 'node_modules', '.bin', 'electron'),
+    require("electron-reload")(__dirname, {
+      electron: path.join(
+        __dirname,
+        "..",
+        "..",
+        "node_modules",
+        ".bin",
+        "electron"
+      ),
       forceHardReset: true,
-      hardResetMethod: 'exit',
+      hardResetMethod: "exit",
     });
   }
 
   app.whenReady().then(() => {
     installExtension(REACT_DEVELOPER_TOOLS)
-        .then((name) => console.log(`Added Extension:  ${name}`))
-        .catch((err) => console.log('An error occurred: ', err));
+      .then((name) => console.log(`Added Extension:  ${name}`))
+      .catch((err) => console.log("An error occurred: ", err));
   });
 
-  win.webContents.on('did-frame-finish-load', () => {
+  win.webContents.on("did-frame-finish-load", () => {
     if (isDev) {
       win.webContents.openDevTools();
     }
   });
 }
 
-app.on('ready', createWindow);
+app.on("ready", createWindow);
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
     app.quit();
   }
 });
 
-app.on('activate', () => {
+app.on("activate", () => {
   if (win === null) {
     createWindow();
   }
@@ -346,9 +349,7 @@ Tiếp theo, tạo file `tsconfig.json` trong thư mục electron:
     "outDir": "../build",
     "rootDir": "../",
     "noEmitOnError": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   }
 }
 ```

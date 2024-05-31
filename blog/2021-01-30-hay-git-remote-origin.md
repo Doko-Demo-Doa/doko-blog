@@ -1,9 +1,6 @@
 ---
 title: Đổi git remote origin
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 image: https://i.ibb.co/6Rr2X6R/git-commands.png
 hide_table_of_contents: true
 tags: [vietnamese, git, terminal]

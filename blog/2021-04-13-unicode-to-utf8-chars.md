@@ -1,6 +1,6 @@
 ---
 title: Chuyển Unicode thành UTF8 char
-author: Doko
+authors: [doko]
 tags: [vietnamese, programming, unicode]
 hide_table_of_contents: true
 ---
@@ -27,25 +27,24 @@ Ví dụ:
 
 Chữ "あ" có mã unicode là 3042:
 
-| 3 | 0 | 4 | 2 |
-| - | - | - | - |
+| 3    | 0    | 4    | 2    |
+| ---- | ---- | ---- | ---- |
 | 0011 | 0000 | 0100 | 0010 |
 
 _3042 (`U-00003042`) sẽ đi theo luật 3 (3x UTF8 character):_
 
 Lý do: Trích từ Wikipedia:
 
-> Three bytes are needed for characters in the rest of the Basic Multilingual Plane, which contains virtually all characters in common use, including most __Chinese, Japanese and Korean__ characters
+> Three bytes are needed for characters in the rest of the Basic Multilingual Plane, which contains virtually all characters in common use, including most **Chinese, Japanese and Korean** characters
 
 Dựa vào bảng chuyển đổi sau (lấy từ [Wikipedia](https://en.wikipedia.org/wiki/UTF-8), thật ra chính là phiên bản rút gọn của bảng trên cùng):
 
-
-| First code point | Last code point | Byte 1 | Byte 2 | Byte 3 | Byte 4 |
-| -: | -: | -: | - | - | - |
-| U+0000 | U+007F | `0xxxxxxx` | - | - | - |
-| U+0080 | U+07FF | `110xxxxx` | `10xxxxxx` | - | - |
-| U+0800 | U+FFFF | `1110xxxx` | `10xxxxxx` | `10xxxxxx` | - |
-| U+10000 | U+10FFFF | `11110xxx` | `10xxxxxx` | `10xxxxxx` | `10xxxxxx` |
+| First code point | Last code point |     Byte 1 | Byte 2     | Byte 3     | Byte 4     |
+| ---------------: | --------------: | ---------: | ---------- | ---------- | ---------- |
+|           U+0000 |          U+007F | `0xxxxxxx` | -          | -          | -          |
+|           U+0080 |          U+07FF | `110xxxxx` | `10xxxxxx` | -          | -          |
+|           U+0800 |          U+FFFF | `1110xxxx` | `10xxxxxx` | `10xxxxxx` | -          |
+|          U+10000 |        U+10FFFF | `11110xxx` | `10xxxxxx` | `10xxxxxx` | `10xxxxxx` |
 
 Ta được (phần đậm là phần đã convert):
 

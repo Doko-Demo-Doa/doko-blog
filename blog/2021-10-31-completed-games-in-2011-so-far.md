@@ -1,9 +1,6 @@
 ---
 title: Games that are cleared from my backlog (so far) in 2011
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 image: https://raw.githubusercontent.com/Doko-Demo-Doa/react-native-shake/main/rnshake.png
 tags: [gaming, english]
 ---

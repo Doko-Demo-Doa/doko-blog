@@ -1,9 +1,6 @@
 ---
 title: Thủ thuật Timing trong Aegisub
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: true
 tags: [vietnamese, aegisub, fansubs]
 ---
@@ -22,7 +19,6 @@ Như có thể thấy, biểu đồ bên phải đã hiện.
 
 ![sbm](https://i.ibb.co/fN9Xkg3/image.png)
 
-
 - **Bước 2**: Nghe và timing theo:
 
 Rất đơn giản, chọn line muốn timing (có thể chọn nhiều line), sau đó ở đồ thị sóng, chọn điểm đầu và cuối bằng cách kéo thả:
@@ -32,7 +28,6 @@ Rất đơn giản, chọn line muốn timing (có thể chọn nhiều line), s
 Đó, chỉ có 2 bước, nhưng điểm quan trọng ở đây là khi hết cutscene thì câu cũng phải mất. Để mình giải thích kỹ hơn một chút:
 
 Hãy để ý vạch hồng hồng trên thanh đồ thị, ngay sau vạch đó, cảnh phim sẽ chuyển. Và bắt buộc sub cũng phải chuyển theo. Do đó dù câu nói của nhân vật có ngân sang đoạn đó một chút thì cũng phải cắt, trừ trường hợp ngân quá dài. Hiện tượng quá vạch này gọi là bleeding, kiểu như chảy máu sub. Sub sẽ bị chờm sang scene tiếp theo, rất ngứa mắt.
-
 
 :::info
 
@@ -46,7 +41,6 @@ Lưu ý: Với trường hợp load video từ script `AVISynth` (thường xuy�
 Khi load video qua `AVISynth`, trên đồ thị sẽ không hiển thị Keyframe bởi Keyframe chỉ có sau pass 1 của công đoạn encoding hoặc ở file video đã encode hoàn chỉnh. Vậy nếu muốn hiển thị thì làm thế nào? Đơn giản là tạo ra nó.
 
 :::
-
 
 Có nhiều cách để thực hiện. Có thể là dùng `x264`, `VirtualDub` với `xvid_encraw` (download `xvid_encraw` ở [đây](https://www.mediafire.com/download/qeuae15wb54ffzn/xvid_encraw.zip)).
 

@@ -1,10 +1,7 @@
 ---
 slug: rust-gtk-getting-started
 title: Rust + GTK on Windows - Getting Started
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: false
 tags: [english, programming, rust, gtk]
 ---
@@ -29,12 +26,11 @@ But I know I have to, eventually. And there it is! I bumped into <a href="https:
 
 - **Msys** / **Msys2** / **MSVC**,... they are the name of "toolchains", a collection of software to get something (mostly app development) done. Microsoft provides Visual Studio and Visual Studio Build Tools (which we might know as MSVC), it's great. And yes, it's locked into Windows ecosystem. But if you're interested in cross-platform development (like me), then you will want <a href="https://www.msys2.org/" rel="noopener noreferrer" target="_blank">Msys2</a> and its fabulous GNU toolchain. It consists of 3 `subsystems`, from the `Introduction` section:
 
->The mingw subsystems provide native Windows programs and are the main focus of the project. These programs are built to co-operate well with other Windows programs, independently of the other subsystems. This part builds on the MinGW-w64 project.
+> The mingw subsystems provide native Windows programs and are the main focus of the project. These programs are built to co-operate well with other Windows programs, independently of the other subsystems. This part builds on the MinGW-w64 project.
 
->The <code>msys2</code> subsystem provides an emulated mostly-POSIX-compliant environment for building software, package management, and shell scripting. These programs live in a virtual single-root filesystem (the root is the MSYS2 installation directory). Some effort is made to have the programs work well with native Windows programs, but it's not seamless. This part builds on the Cygwin project.
+> The <code>msys2</code> subsystem provides an emulated mostly-POSIX-compliant environment for building software, package management, and shell scripting. These programs live in a virtual single-root filesystem (the root is the MSYS2 installation directory). Some effort is made to have the programs work well with native Windows programs, but it's not seamless. This part builds on the Cygwin project.
 
->Each of the subsystems provides its own native (i.e. target=host) compiler toolchain, in <code>msys2-devel</code>, <code>mingw-w64-i686-toolchain</code>, and <code>mingw-w64-x86_64-toolchain</code>. There are also cross compiler toolchains with `host={i686,x86_64}-pc-msys` and `target={i686,x86_64}-w64-mingw32` in `mingw-w64-cross-toolchain`, but these are of limited use because there are no library packages for them.
-
+> Each of the subsystems provides its own native (i.e. target=host) compiler toolchain, in <code>msys2-devel</code>, <code>mingw-w64-i686-toolchain</code>, and <code>mingw-w64-x86_64-toolchain</code>. There are also cross compiler toolchains with `host={i686,x86_64}-pc-msys` and `target={i686,x86_64}-w64-mingw32` in `mingw-w64-cross-toolchain`, but these are of limited use because there are no library packages for them.
 
 ### 1. Installing Rust
 
@@ -83,7 +79,7 @@ rustup default stable-x86_64-pc-windows-gnu
 
 First, grab the installer [here](https://www.msys2.org/)
 
-Then set these environment variables. You can see it by right-clicking on __"This PC" > Properties > Advanced System Settings__
+Then set these environment variables. You can see it by right-clicking on **"This PC" > Properties > Advanced System Settings**
 
 ```powershell
 SET GTK_LIB_DIR=C:\msys64\mingw64\lib

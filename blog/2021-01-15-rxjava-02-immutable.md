@@ -1,9 +1,6 @@
 ---
 title: RxJava Legacy (02) - Immutable
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: false
 tags: [vietnamese, programming, java, rxjava]
 ---
@@ -33,8 +30,7 @@ Trong Reactive Programming, dữ liệu được coi như các stream (dòng th�
 
 > "truyền dòng dữ liệu bất biến" (streams of immutable values over time) bất cứ khi nào có thể.
 
-Một trích đoạn khác từ loạt hướng dẫn *Android Development Best Practices guide của Khan Academy*:
-
+Một trích đoạn khác từ loạt hướng dẫn _Android Development Best Practices guide của Khan Academy_:
 
 :::info
 

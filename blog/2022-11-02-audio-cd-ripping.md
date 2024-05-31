@@ -1,9 +1,6 @@
 ---
 title: Hướng dẫn rip đĩa CD sang FLAC bằng Exact Audio Copy
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 image: /img/audio-cd-guide/eac_eac_menu.png
 tags: [software, vietnamese, guide]
 ---

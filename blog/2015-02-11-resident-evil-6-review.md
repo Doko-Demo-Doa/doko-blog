@@ -1,21 +1,18 @@
 ---
 title: Resident Evil 6 Review
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: false
-tags: [vietnamese, resident-evil, review, '2013']
+tags: [vietnamese, resident-evil, review, "2013"]
 ---
 
 ![re6](https://i.ibb.co/dsNQ1db/residentevil6header.jpg)
 
-- __Tên game__: Resident Evil 6 / Biohazard 6
-- __Phát triển__: Capcom
-- __Phát hành__: Capcom
-- __Năm phát hành__: 2013
-- __Hệ máy__: PC / PS3 / XBox 360 (Review bản PC).
-- __Steam Store__: [Link](https://store.steampowered.com/app/221040/Resident_Evil_6/)
+- **Tên game**: Resident Evil 6 / Biohazard 6
+- **Phát triển**: Capcom
+- **Phát hành**: Capcom
+- **Năm phát hành**: 2013
+- **Hệ máy**: PC / PS3 / XBox 360 (Review bản PC).
+- **Steam Store**: [Link](https://store.steampowered.com/app/221040/Resident_Evil_6/)
 
 Resident Evil 6, phiên bản mới nhất của series trò chơi hành động kinh dị nổi tiếng (một thời) của Capcom, và gần như đã trở thành một ví dụ tiêu biểu của thể loại này bên cạnh các series khác như Silent Hill, Dead Space,...
 
@@ -54,7 +51,6 @@ Do đặc điểm của cốt truyện sắp xếp từ trước, nên trong gam
 ![city](https://i.ibb.co/ykFjyLS/C9-C8231-A8421-AF33-D10-BB1226-CEA2-D1597-B39-FEC.jpg)
 
 Vì sao? Bạn có thể tưởng tượng nếu như phải giải mã hay ấn đúng nút để điều khiển máy bay hay phá một ổ khóa trong thời gian hạn hẹp, có lẽ không vấn đề, nhưng có những tình tiết đơn giản đến mức rẽ sang đường, với bàn tay ra phía trước cũng cần ấn nút thì quả là nhảm nhí. Việc này có thể được khắc phục bằng cách chơi ở chế độ Amateur (chế độ dễ nhất) hoặc chỉnh trong Options của trò chơi, nhưng vậy thì còn gì là thử thách? Hơn nữa, dù bạn đã quen với QTE nhưng việc phối hợp với đồng đội máy (AI) đôi khi cũng gây ra khó chịu, thậm chí là ức chế (ai đã chơi campaign của Chris, chapter 5 chắc thấm thía vụ này, IQ đồng đội máy chắc bị âm). Capcom đã hơi lạm dụng QTE và đây cũng là một trong những lý do khiến điểm đánh giá của trò chơi bị tụt xuống khá đáng kể.
-
 
 ## Hình + âm = Đẹp nhưng không quá ấn tượng
 
@@ -128,14 +124,14 @@ Nhìn chung, số lượng quái vật trong game rất đa dạng, và mỗi lo
 
 Không nhắc đến mục chơi multiplayer và hệ thống leaderboard thì quả là thiếu sót cho RE6. Nếu như ở các phần trước chỉ có 2 mục là co-op trong campaign và mercenaries thì ở RE6, số lượng đã tăng lên con số 8. Bao gồm các chế độ:
 
-+ Campaign Co-op.
-+ Agent Hunt.
-+ The Mercenaries.
-+ The Mercenaries No Mercy.
-+ Survivors.
-+ Onslaught.
-+ Predator.
-+ Siege.
+- Campaign Co-op.
+- Agent Hunt.
+- The Mercenaries.
+- The Mercenaries No Mercy.
+- Survivors.
+- Onslaught.
+- Predator.
+- Siege.
 
 ![multiplayer modes](https://i.ibb.co/tYknh1L/CB316-E5-DD2-CE35-DB3-EE400-AB209311-B69-EE3-E750.jpg)
 
@@ -150,7 +146,6 @@ Các phần chơi khác, mời bạn tự xử.
 
 RE6 cung cấp rất nhiều chế độ chơi multi, các điểm số, kỹ năng, phần thưởng,… được lưu giữ và tổ chức qua Steam và dịch vụ trực tuyến miễn phí ResidentEvil.net của Capcom. Đây là dịch vụ khá toàn diện, liên kết với từng người chơi để theo sát quá trình chơi của họ. Hệ thống này ghi nhận đầy đủ, từ việc người chơi giết bao nhiêu zombie, giết bằng súng gì, giết theo cách nào, độ chính xác ra sao… Tất cả được sắp xếp khoa học trong một trang web có bố cục phù hợp. Qua mỗi lần chơi, người chơi được thăng cấp agent level và nhận được RE Points. Sử dụng RE Points để mua thêm costume, diorama maps, wallpaper, icon,... online.
 
-
 Ở thời điểm 2013, mới chỉ có 2 tựa là Resident Evil 6 và Resident Evil Revelations, trên PC, WiiU, XBox 360 và PS3. Ở đây cũng diễn ra các event, tức là các sự kiện do capcom tổ chức cho người chơi, với phần thưởng là RE Points (VD, hoàn thành chapter 2 của campaign Jake càng sớm càng tốt, giành nhiều điểm trong phần Mercenaries,... ).
 
 ## Điệp khúc: Hóng
@@ -164,6 +159,7 @@ Nhìn chung thì Resident Evil 6, theo mình, vẫn là một game hay. Mặc d�
 Nên, xét tổng thể, mình chấm 8.0/10. Và nhận xét đây là game có thể chơi và thích được. Bản PC port cũng được đầu tư không đến nỗi nào khi hỗ trợ full tay cầm lẫn bàn phím, nhiều chế độ chỉnh đồ họa và một số nội dung phụ mà bản console ra trước không hề có.
 
 Chân thành cảm ơn:
+
 - _fray92_ đã giúp order game để có cái chơi mà chém gió.
 - Tam Lieu, Nero, Hongduczozo, bibo (GVN) đã sát cánh với tại hạ suốt 4 campaign của trò chơi để cùng nhau ăn hành và giải những câu puzzle + QTE khó bỏ bu =.=
 - Và cuối cùng, cảm ơn bạn đã đọc bài viết.

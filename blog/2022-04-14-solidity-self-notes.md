@@ -1,9 +1,6 @@
 ---
 title: Solidity self-notes
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 tags: [programming, english]
 ---
 

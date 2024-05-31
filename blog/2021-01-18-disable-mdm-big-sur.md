@@ -1,9 +1,6 @@
 ---
 title: Disable MDM on Mac OS Big Sur
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: true
 tags: [english, tips, mac, big-sur]
 ---
@@ -21,7 +18,7 @@ sudo nano /private/etc/hosts
 Then append these lines:
 
 ```h
-0.0.0.0 iprofiles.apple.com
+0.0.0.0 iprofiles.apple.com // [!code ++]
 0.0.0.0 mdmenrollment.apple.com
 0.0.0.0 deviceenrollment.apple.com
 0.0.0.0 gdmf.apple.com

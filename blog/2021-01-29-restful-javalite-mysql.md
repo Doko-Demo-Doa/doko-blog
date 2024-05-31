@@ -1,9 +1,6 @@
 ---
 title: RESTful với JavaLite và MySQL / SQLite
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 image: https://i.ibb.co/3WqBzR9/javalite-rest.png
 hide_table_of_contents: false
 tags: [vietnamese, java, javalite, mysql]
@@ -115,15 +112,15 @@ public void givenSavedProduct_WhenFindFirst_ThenSavedProductIsReturned() {
       "jdbc:mysql://localhost/dbname",
       "user",
       "password");
- 
+
     Product toSaveProduct = new Product();
     toSaveProduct.set("name", "Bread");
     toSaveProduct.saveIt();
- 
+
     Product savedProduct = Product.findFirst("name = ?", "Bread");
- 
+
     assertEquals(
-      toSaveProduct.get("name"), 
+      toSaveProduct.get("name"),
       savedProduct.get("name"));
 }
 ```
@@ -139,11 +136,11 @@ Mở đầu với `ProductsController` như sau:
 ```java title="ProductsController.java"
 @RESTful
 public class ProductsController extends AppController {
- 
+
     public void index() {
         // ...
     }
- 
+
 }
 ```
 
@@ -155,36 +152,36 @@ http://<host>:<port>/products
 
 Các controller có annotation `@Restful` sẽ tự động được đánh thêm các method như trong bảng:
 
-| Phương thức | Tên trong Java | Kiểu | URI |
-|-|-|-|-|
-| CREATE | `create()` | POST | `http://host:port/products` |
-| READ ONE | `show()` | GET | `http://host:port/products/{id}` |
-| READ ALL | `index()` | GET | `http://host:port/products/` |
-| UPDATE | `update()` | PUT | `http://host:port/products/{id}` |
-| DELETE | `delete()` | DELETE | `http://host:port/products/{id}` |
+| Phương thức | Tên trong Java | Kiểu   | URI                              |
+| ----------- | -------------- | ------ | -------------------------------- |
+| CREATE      | `create()`     | POST   | `http://host:port/products`      |
+| READ ONE    | `show()`       | GET    | `http://host:port/products/{id}` |
+| READ ALL    | `index()`      | GET    | `http://host:port/products/`     |
+| UPDATE      | `update()`     | PUT    | `http://host:port/products/{id}` |
+| DELETE      | `delete()`     | DELETE | `http://host:port/products/{id}` |
 
 Và nếu như thêm đầy đủ thì nó trông như này:
 
 ```java title="ProductsController.java"
 @RESTful
 public class ProductsController extends AppController {
- 
+
     public void index() {
         // Lấy hết products
     }
- 
+
     public void create() {
         // Tạo product mới
     }
- 
+
     public void update() {
         // Sửa product
     }
- 
+
     public void show() {
         // Tìm product
     }
- 
+
     public void destroy() {
         // Xóa product
     }
@@ -256,7 +253,7 @@ Sau khi tạo xong 3 class, chúng ta cần 1 file config tên là web.xml ở n
 ```xml title="web.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns=...>
- 
+
     <filter>
         <filter-name>dispatcher</filter-name>
         <filter-class>org.javalite.activeweb.RequestDispatcher</filter-class>
@@ -269,12 +266,12 @@ Sau khi tạo xong 3 class, chúng ta cần 1 file config tên là web.xml ở n
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
- 
+
     <filter-mapping>
         <filter-name>dispatcher</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
- 
+
 </web-app>
 ```
 
@@ -287,14 +284,14 @@ ActiveWeb, phần nào như tên gọi, cũng sử dụng dạng tham chiếu d�
 ```java title="ProductsController.java"
 @RESTful
 public class ProductsController extends AppController {
- 
-    private ObjectMapper mapper = new ObjectMapper();    
- 
+
+    private ObjectMapper mapper = new ObjectMapper();
+
     public void index() {
         List<Product> products = Product.findAll();
         // ...
     }
- 
+
     public void create() {
         Map payload = mapper.readValue(getRequestString(), Map.class);
         Product p = new Product();
@@ -302,7 +299,7 @@ public class ProductsController extends AppController {
         p.saveIt();
         // ...
     }
- 
+
     public void update() {
         Map payload = mapper.readValue(getRequestString(), Map.class);
         String id = getId();
@@ -311,13 +308,13 @@ public class ProductsController extends AppController {
         p.saveIt();
         // ...
     }
- 
+
     public void show() {
         String id = getId();
         Product p = Product.findById(id);
         // ...
     }
- 
+
     public void destroy() {
         String id = getId();
         Product p = Product.findById(id);
@@ -327,7 +324,7 @@ public class ProductsController extends AppController {
 }
 ```
 
-Nếu copy paste đoạn code trên, hiển nhiên là nó chưa trả về gì cả, mà chúng ta sẽ phải xử lý các view của __ActiveWeb__ ngay sau đây.
+Nếu copy paste đoạn code trên, hiển nhiên là nó chưa trả về gì cả, mà chúng ta sẽ phải xử lý các view của **ActiveWeb** ngay sau đây.
 
 ## 7. View
 
@@ -336,10 +333,7 @@ ActiveWeb tích hợp [Apache FreeMarker](https://freemarker.apache.org/), một
 Các view tương ứng sẽ được đặt vào folder con tương ứng. Trong ví dụ này là `src/main/webapp/WEB-INF/views/products`. Giờ chúng ta sẽ tạo template đầu tiên có tên `_product.ftl`:
 
 ```handlebars title="_product.ftl"
-{
-    "id" : ${product.id},
-    "name" : "${product.name}"
-}
+{ "id" : ${product.id}, "name" : "${product.name}" }
 ```
 
 Ta có thể nhận ra cái view này chính là một dạng json. Tuy nhiên dữ liệu trả về khi truy vấn product lại là dạng mảng, vậy nên sẽ cần một file nữa tên `index.ftl`:
@@ -360,7 +354,7 @@ public class ProductsController extends AppController {
         view("products", products);
         render();
     }
- 
+
     public void show() {
         String id = getId();
         Product p = Product.findById(id);
@@ -377,7 +371,6 @@ Tiếp đó, do không để tên view ở hàm render, file `index.ftl` sẽ đ
 Ở `show()`, chúng ta gán trực tiếp product p cho phần tử product trong view, và chỉ định rõ luôn view nào render cái đó.
 
 Ngoài ra chúng ta có thể thêm `message.ftl`, dùng cho hiển thị các thông báo chung:
-
 
 ```
 {
@@ -399,12 +392,12 @@ Class `ProductsController.java` sẽ đầy đủ như sau:
 @RESTful
 public class ProductsController extends AppController {
     private ObjectMapper mapper = new ObjectMapper();
- 
+
     public void index() {
         view("products", Product.findAll());
         render().contentType("application/json");
     }
- 
+
     public void create() {
         Map payload = mapper.readValue(getRequestString(), Map.class);
         Product p = new Product();
@@ -413,7 +406,7 @@ public class ProductsController extends AppController {
         view("message", "Successfully saved product id " + p.get("id"), "code", 200);
         render("message");
     }
- 
+
     public void update() {
         Map payload = mapper.readValue(getRequestString(), Map.class);
         String id = getId();
@@ -428,7 +421,7 @@ public class ProductsController extends AppController {
         view("message", "Successfully updated product id " + id, "code", 200);
         render("message");
     }
- 
+
     public void show() {
         String id = getId();
         Product p = Product.findById(id);
@@ -440,7 +433,7 @@ public class ProductsController extends AppController {
         view("product", p);
         render("_product");
     }
- 
+
     public void destroy() {
         String id = getId();
         Product p = Product.findById(id);
@@ -453,12 +446,12 @@ public class ProductsController extends AppController {
         view("message", "Successfully deleted product id " + id, "code", 200);
         render("message");
     }
- 
+
     @Override
     protected String getContentType() {
         return "application/json";
     }
- 
+
     @Override
     protected String getLayout() {
         return null;
@@ -560,6 +553,6 @@ $ curl -X DELETE http://localhost:8080/products/2
 
 ## 9. Nhìn lại
 
-JavaLite có khá nhiều công cụ để giúp tạo ứng dụng nhanh, tuy nhiên do dựa theo convention nên lúc đầu sẽ cần tìm hiểu quy định về tên và nơi đặt các file tương ứng. Mặt khác, đúng như cái  tên “lite”, JavaLite phù hợp với các dự án nhỏ và vừa.
+JavaLite có khá nhiều công cụ để giúp tạo ứng dụng nhanh, tuy nhiên do dựa theo convention nên lúc đầu sẽ cần tìm hiểu quy định về tên và nơi đặt các file tương ứng. Mặt khác, đúng như cái tên “lite”, JavaLite phù hợp với các dự án nhỏ và vừa.
 
 Ví dụ trên chỉ là giới thiệu hương hoa về **ActiveWeb** và **ActiveJDBC**. Tôi viết bài này khi đang tích hợp một framework web nhỏ cho con bot Discord, có hỗ trợ SQLite và JavaLite rất phù hợp cho việc đó. Các bạn có thể xem thêm hướng dẫn trên [website](https://javalite.io/). Code mẫu có thể tìm thấy tại link [Github](https://github.com/javalite/javalite-examples/tree/master/activeweb-rest) này.

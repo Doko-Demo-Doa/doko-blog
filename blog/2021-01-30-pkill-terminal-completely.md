@@ -1,9 +1,6 @@
 ---
 title: Kill the Terminal and disable its session restoration
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: true
 tags: [english, tips, mac, terminal]
 ---
@@ -42,7 +39,7 @@ rm -rf ~/Library/Saved\ Application\ State/com.apple.Terminal.savedState/*
 
 This will delete all saved states created by Terminal earlier.
 
-3. *This is optional*: Lock the folder so that the state won't be spawned:
+3. _This is optional_: Lock the folder so that the state won't be spawned:
 
 ```
 chflags uchg ~/Library/Saved\ Application\ State/com.apple.Terminal.savedState/

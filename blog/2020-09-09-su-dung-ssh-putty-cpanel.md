@@ -1,9 +1,6 @@
 ---
 title: Sử dụng SSH với cPanel và Putty
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: false
 tags: [vietnamese, networking, ssh, cpanel]
 ---
@@ -24,16 +21,16 @@ Các hosting con hỗ trợ cPanel cũng có tính năng này (tất nhiên là 
 
 ![cpanel2](https://i.ibb.co/XCFvXLB/2.webp)
 
-- Chọn __Manage Key__.
+- Chọn **Manage Key**.
 - Có 2 cách để thực hiện: Tạo key phía server và import vào Putty hoặc tạo key từ Putty và import vào server. Ở đây làm theo cách thứ nhất.
 - Chọn Generate New Key. Có các form phải nhập:
 
 ![cpanel3](https://i.ibb.co/54chTb0/3.webp)
 
-+ Key Name: Đặt tên key.
-+ Key Password: Passphrase của key.
-+ Key Type: Kiểu mã hóa key, có 2 kiểu là RSA và DSA. DSA tạo khóa trao đổi nhanh hơn trong khi RSA xác thực nhanh hơn. Mình thì thích RSA hơn.
-+ Key Size: 2048 là đủ, 4096 tăng thời gian mã hóa / giải mã hơn.
+- Key Name: Đặt tên key.
+- Key Password: Passphrase của key.
+- Key Type: Kiểu mã hóa key, có 2 kiểu là RSA và DSA. DSA tạo khóa trao đổi nhanh hơn trong khi RSA xác thực nhanh hơn. Mình thì thích RSA hơn.
+- Key Size: 2048 là đủ, 4096 tăng thời gian mã hóa / giải mã hơn.
 
 Nhấn `Generate Key`. sau đó `Go Back`.
 

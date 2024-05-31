@@ -1,10 +1,7 @@
 ---
 slug: cai-dat-tensorflow-gpu-nvidia-cuda-windows
 title: Cài đặt Tensorflow-GPU với Conda và NVIDIA CUDA Toolkit trên Windows
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 hide_table_of_contents: false
 tags: [vietnamese, programming, nvidia, cuda, tensorflow]
 ---
@@ -27,7 +24,7 @@ Tuy nhiên còn có một cách khác tốt hơn và cung cấp hiệu năng cao
 
 ![tensor](https://i.ibb.co/pyMRkKW/Tensor-Flow-Training.png)
 
-<center>(Hình ảnh tư liệu được lấy từ <a href="https://www.anaconda.com/tensorflow-in-anaconda/">link</a>)</center>
+(Hình ảnh tư liệu được lấy từ [link](https://www.anaconda.com/tensorflow-in-anaconda/))
 
 Sở dĩ có được hiệu năng như vậy là do Conda đã sử dụng **Intel Math Kernel Library for Deep Neural Networks (MKL-DNN)** từ phiên bản 1.9.0. Điều này có ý nghĩa rất lớn với những người dùng CPU để train.
 
@@ -49,7 +46,7 @@ conda install tensorflow-gpu
 
 Các thông tin khác về Conda và Tensorflow các bạn có thể đọc thêm tại [đây](https://www.anaconda.com/blog/developer-blog/tensorflow-in-anaconda/). Tài liệu về tối ưu MKL cũng có thể tìm ở [đây](https://docs.anaconda.com/mkl-optimizations/).
 
-Để có được bộ CUDA Toolkit, các bạn sẽ cần một tài khoản NVIDIA miễn phí. Đăng ký tại <a href="http://Cài đặt Tensorflow-GPU với Conda và NVIDIA CUDA Toolkit trên Windows">đây</a>.
+Để có được bộ CUDA Toolkit, các bạn sẽ cần một tài khoản NVIDIA miễn phí. Đăng ký tại [link](https://www.nvidia.com/en-us/).
 
 Tùy đời card đồ họa mà ta sẽ có phiên bản tương thích tương ứng. Ví dụ với GTX 1080Ti thì combo sau sẽ là chuẩn nhất:
 

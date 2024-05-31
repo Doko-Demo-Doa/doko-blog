@@ -1,9 +1,6 @@
 ---
 title: React Native Shake 4 released
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 image: https://raw.githubusercontent.com/Doko-Demo-Doa/react-native-shake/main/rnshake.png
 tags: [programming, react, react-native, ios, android, english]
 ---
@@ -22,7 +19,7 @@ RNShake.addListener(() => {
 
 <!-- truncate -->
 
-##  Breaking changes
+## Breaking changes
 
 - The lib now uses `NativeEventEmitter` because old bridge implementation is deprecated. Worry not, little will changes.
 - 4 methods under the hood:

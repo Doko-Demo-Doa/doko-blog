@@ -1,9 +1,6 @@
 ---
 title: Thuật toán Jarvis để tính Convex Hull
-author: Doko
-author_title: Administrator
-author_url: https://github.com/Doko-Demo-Doa
-author_image_url: /img/avatar_doraemon.jpg
+authors: [doko]
 tags: [vietnamese, programming, mathematics]
 hide_table_of_contents: true
 ---
@@ -15,7 +12,7 @@ Ví dụ nếu muốn tạo hiệu ứng vỡ chữ sang các mảnh tam giác, 
 - **Jarviss** hoặc **Graham**: Dùng để tìm ra convex hull - bao lồi - là hình bao ngoài chứa tất cả các điểm đầu vào.
 - **Delauney**: Thuật toán chia convex hull thành các mảnh tam giác sao cho không có tam giác nào chồng lên nhau.
 
-<!-- truncate -->
+{/* Truncate */}
 
 ## Thuật toán Jarviss
 
@@ -74,8 +71,8 @@ Nếu giá trị trả về của biểu thức trên là âm thì tức là ng�
 
 Code thuật toán:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 <Tabs
   defaultValue="python"
